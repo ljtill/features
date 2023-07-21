@@ -1,0 +1,14 @@
+{
+    "name": "Kubernetes CLI",
+    "id": "kubectl",
+    "version": "1.0.0",
+    "description": "Command line tool (kubectl)",
+    "options": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-kubernetes-tools.vscode-kubernetes-tools"
+            ]
+        }
+    }
+}
