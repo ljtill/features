@@ -6,7 +6,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" kubectl version --client=true
+check "version" kubectl version --client=true --output=json
 
 # Report result
 reportResults

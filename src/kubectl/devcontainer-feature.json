@@ -10,8 +10,5 @@
                 "ms-kubernetes-tools.vscode-kubernetes-tools"
             ]
         }
-    },
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils"
-    ]
+    }
 }
