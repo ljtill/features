@@ -2,6 +2,7 @@
     "tools": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
+            "ghcr.io/devcontainers/features/common-utils": {},
             "kubectl": {}
         }
     }
