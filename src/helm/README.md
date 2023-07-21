@@ -1,13 +1,13 @@
 
-# Kubernetes CLI (kubectl)
+# Helm (helm)
 
-Command line tool (kubectl)
+Command line tool (helm)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/kubectl:1": {}
+    "ghcr.io/ljtill/features/helm:1": {}
 }
 ```
 
@@ -17,14 +17,8 @@ Command line tool (kubectl)
 |-----|-----|-----|-----|
 
 
-## Customizations
-
-### VS Code Extensions
-
-- `ms-kubernetes-tools.vscode-kubernetes-tools`
-
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/kubectl/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/helm/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
