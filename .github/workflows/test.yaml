@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - argo
           - flux
           - helm
           - kubectl
@@ -35,6 +36,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - argo
           - flux
           - helm
           - kubectl
