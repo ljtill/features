@@ -11,7 +11,7 @@ check() {
     fi
 }
 
-check curl
+check curl ca-certificates
 
 install() {
     echo "Activating feature 'kubectl'"
