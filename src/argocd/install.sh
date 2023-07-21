@@ -22,6 +22,6 @@ install() {
     mv ./argocd /usr/local/bin/argocd
 }
 
-echo "Activating feature 'argo'"
+echo "Activating feature 'argocd'"
 
 install

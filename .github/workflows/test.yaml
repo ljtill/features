@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
-          - argo
+          - argocd
           - clusterctl
           - flux
           - helm
@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         features:
-          - argo
+          - argocd
           - clusterctl
           - flux
           - helm

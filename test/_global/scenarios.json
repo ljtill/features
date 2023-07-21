@@ -2,7 +2,7 @@
     "tools": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "argo": {},
+            "argocd": {},
             "clusterctl": {},
             "flux": {},
             "helm": {},
