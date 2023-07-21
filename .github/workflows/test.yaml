@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - flux
           - helm
           - kubectl
         baseImage:
@@ -34,6 +35,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - flux
           - helm
           - kubectl
     steps:

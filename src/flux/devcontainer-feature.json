@@ -1,0 +1,14 @@
+{
+    "name": "Flux",
+    "id": "flux",
+    "version": "1.0.0",
+    "description": "Command line tool (flux)",
+    "options": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "weaveworks.vscode-gitops-tools"
+            ]
+        }
+    }
+}
