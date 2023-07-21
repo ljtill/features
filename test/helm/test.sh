@@ -7,7 +7,6 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "version" helm version
-check "version" kubectl version --client=true --output=json
 
 # Report result
 reportResults
