@@ -7,9 +7,6 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "version" argocd version --client --output json
-check "version" flux version --client --output json
-check "version" helm version
-check "version" kubectl version --client=true --output=json
 
 # Report result
 reportResults
