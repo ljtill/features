@@ -3,6 +3,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "argo": {},
+            "clusterctl": {},
             "flux": {},
             "helm": {},
             "kubectl": {}
