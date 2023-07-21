@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - helm
           - kubectl
         baseImage:
           - debian:latest
@@ -33,6 +34,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - helm
           - kubectl
     steps:
       - uses: actions/checkout@v3
