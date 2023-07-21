@@ -1,0 +1,8 @@
+{
+    "name": "Cluster API",
+    "id": "clusterctl",
+    "version": "1.0.0",
+    "description": "Command line tool (clusterctl)",
+    "options": {},
+    "customizations": {}
+}

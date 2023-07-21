@@ -14,6 +14,7 @@ jobs:
       matrix:
         features:
           - argo
+          - clusterctl
           - flux
           - helm
           - kubectl
@@ -37,6 +38,7 @@ jobs:
       matrix:
         features:
           - argo
+          - clusterctl
           - flux
           - helm
           - kubectl
