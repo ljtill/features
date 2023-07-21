@@ -1,8 +1,0 @@
-{
-    "name": "Argo",
-    "id": "argo",
-    "version": "1.0.0",
-    "description": "Command line tool (argo)",
-    "options": {},
-    "customizations": {}
-}

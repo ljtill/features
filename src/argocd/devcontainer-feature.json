@@ -1,0 +1,8 @@
+{
+    "name": "Argo CD",
+    "id": "argocd",
+    "version": "1.0.0",
+    "description": "Command line tool (argocd)",
+    "options": {},
+    "customizations": {}
+}
