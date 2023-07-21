@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - ghcr.io/devcontainers/features/common-utils:latest
           - kubectl
         baseImage:
           - debian:latest
