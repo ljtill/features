@@ -1,13 +1,13 @@
 
-# Spin (spin)
+# Pulumi (pulumi)
 
-Command line tool (spin)
+Command line tool (pulumi)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/spin:1": {}
+    "ghcr.io/ljtill/features/pulumi:1": {}
 }
 ```
 
@@ -21,10 +21,10 @@ Command line tool (spin)
 
 ### VS Code Extensions
 
-- `fermyon.spin-vscode`
+- `pulumi.pulumi-lsp-client`
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/spin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/pulumi/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
