@@ -1,0 +1,8 @@
+{
+    "name": "Spin",
+    "id": "spin",
+    "version": "1.0.0",
+    "description": "Command line tool (spin)",
+    "options": {},
+    "customizations": {}
+}
