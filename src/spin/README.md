@@ -17,6 +17,12 @@ Command line tool (spin)
 |-----|-----|-----|-----|
 
 
+## Customizations
+
+### VS Code Extensions
+
+- `fermyon.spin-vscode`
+
 
 
 ---
