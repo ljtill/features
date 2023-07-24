@@ -18,6 +18,7 @@ jobs:
           - flux
           - helm
           - kubectl
+          - pulumi
           - spin
         baseImage:
           - debian:latest
@@ -43,6 +44,7 @@ jobs:
           - flux
           - helm
           - kubectl
+          - pulumi
           - spin
     steps:
       - uses: actions/checkout@v3
