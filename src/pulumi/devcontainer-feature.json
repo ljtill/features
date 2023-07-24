@@ -1,0 +1,14 @@
+{
+    "name": "Pulumi",
+    "id": "pulumi",
+    "version": "1.0.0",
+    "description": "Command line tool (pulumi)",
+    "options": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "pulumi.pulumi-lsp-client"
+            ]
+        }
+    }
+}
