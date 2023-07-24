@@ -6,7 +6,8 @@
             "clusterctl": {},
             "flux": {},
             "helm": {},
-            "kubectl": {}
+            "kubectl": {},
+            "spin": {}
         }
     }
 }

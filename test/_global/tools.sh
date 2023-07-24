@@ -11,6 +11,7 @@ check "version" clusterctl version
 check "version" flux version --client --output json
 check "version" helm version
 check "version" kubectl version --client=true --output=json
+check "version" spin --version
 
 # Report result
 reportResults
