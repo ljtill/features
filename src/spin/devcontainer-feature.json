@@ -8,7 +8,10 @@
         "vscode": {
             "extensions": [
                 "fermyon.spin-vscode"
-            ]
+            ],
+            "settings": {
+                "spin.customProgramPath": "/usr/local/bin/spin"
+            }
         }
     }
 }
