@@ -1,13 +1,13 @@
 
-# Spin (spin)
+# Wasmtime CLI (wasmtime)
 
-Command line tool (spin)
+Command line tool (wasmtime)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/spin:1": {}
+    "ghcr.io/ljtill/features/wasmtime:1": {}
 }
 ```
 
@@ -17,14 +17,8 @@ Command line tool (spin)
 |-----|-----|-----|-----|
 
 
-## Customizations
-
-### VS Code Extensions
-
-- `fermyon.spin-vscode`
-
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/spin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/wasmtime/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
