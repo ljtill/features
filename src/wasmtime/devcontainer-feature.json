@@ -1,0 +1,8 @@
+{
+    "name": "Wasmtime CLI",
+    "id": "wasmtime",
+    "version": "1.0.0",
+    "description": "Command line tool (wasmtime)",
+    "options": {},
+    "customizations": {}
+}

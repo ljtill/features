@@ -13,6 +13,7 @@ check "version" helm version
 check "version" kubectl version --client=true --output=json
 check "version" pulumi version
 check "version" spin --version
+check "version" wasmtime --version
 
 # Report result
 reportResults
