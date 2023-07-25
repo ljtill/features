@@ -17,14 +17,14 @@ check curl ca-certificates jq xz-utils
 
 install() {
     version=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
-    curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"$version"/wasmtime-v"$version"-x86_64-linux.tar.xz
-    xz -d ./wasmtime-x86_64-linux.tar.xz
-    tar -xof ./wasmtime-x86_64-linux.tar
-    rm -f ./wasmtime-x86_64-linux.tar
-    chmod +x ./wasmtime-x86_64-linux/wasmtime
-    chown root:root ./wasmtime-x86_64-linux/wasmtime
-    mv ./wasmtime-x86_64-linux/wasmtime /usr/local/bin/wasmtime
-    rm -rf ./wasmtime-x86_64-linux
+    curl -Lo ./wasmtime-v"$version"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"$version"/wasmtime-v"$version"-x86_64-linux.tar.xz
+    xz -d ./wasmtime-v"$version"-x86_64-linux.tar.xz
+    tar -xof ./wasmtime-v"$version"-x86_64-linux.tar
+    rm -f ./wasmtime-v"$version"-x86_64-linux.tar
+    chmod +x ./wasmtime-v"$version"-x86_64-linux/wasmtime
+    chown root:root ./wasmtime-v"$version"-x86_64-linux/wasmtime
+    mv ./wasmtime-v"$version"-x86_64-linux/wasmtime /usr/local/bin/wasmtime
+    rm -rf ./wasmtime-v"$version"-x86_64-linux
 }
 
 echo "Activating feature 'wasmtime'"
