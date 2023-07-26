@@ -1,13 +1,13 @@
 
-# Argo CD (argocd)
+# Kubebuilder (kubebuilder)
 
-Command line tool (argocd)
+Command line tool (kubebuilder)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/argocd:1": {}
+    "ghcr.io/ljtill/features/kubebuilder:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Command line tool (argocd)
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/argocd/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/kubebuilder/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
