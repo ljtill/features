@@ -1,8 +1,9 @@
 {
-    "name": "Flux",
     "id": "flux",
     "version": "1.0.0",
+    "name": "Flux",
     "description": "Command line tool (flux)",
+    "documentationURL": "https://fluxcd.io/flux",
     "options": {},
     "customizations": {
         "vscode": {
