@@ -16,7 +16,7 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates
 
 install() {
-    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.20.0/kind-linux-amd64
+    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/latest/download/kind-linux-amd64
     chmod +x ./kind
     chown root:root ./kind
     mv ./kind /usr/local/bin/kind
