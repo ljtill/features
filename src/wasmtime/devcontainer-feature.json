@@ -1,8 +1,9 @@
 {
-    "name": "Wasmtime CLI",
     "id": "wasmtime",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "name": "Wasmtime CLI",
     "description": "Command line tool (wasmtime)",
+    "documentationURL": "https://docs.wasmtime.dev",
     "options": {},
     "customizations": {}
 }
