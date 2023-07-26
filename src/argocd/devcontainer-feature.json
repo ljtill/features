@@ -1,8 +1,9 @@
 {
-    "name": "Argo CD",
     "id": "argocd",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "name": "Argo CD",
     "description": "Command line tool (argocd)",
+    "documentationURL": "https://argo-cd.readthedocs.io",
     "options": {},
     "customizations": {}
 }
