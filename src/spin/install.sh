@@ -15,7 +15,7 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates git
+check curl ca-certificates jq
 
 install() {
     version=$(curl -sL https://api.github.com/repos/fermyon/spin/releases/latest | jq -r ".tag_name" | sed 's/v//')
