@@ -17,6 +17,7 @@ jobs:
           - clusterctl
           - flux
           - helm
+          - kind
           - kubectl
           - pulumi
           - spin
@@ -44,6 +45,7 @@ jobs:
           - clusterctl
           - flux
           - helm
+          - kind
           - kubectl
           - pulumi
           - spin
