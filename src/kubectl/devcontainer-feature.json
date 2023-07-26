@@ -1,6 +1,6 @@
 {
     "id": "kubectl",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Kubernetes CLI",
     "description": "Command line tool (kubectl)",
     "documentationURL": "https://kubernetes.io/docs/reference/kubectl",
