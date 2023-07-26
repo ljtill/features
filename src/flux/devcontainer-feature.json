@@ -1,6 +1,6 @@
 {
     "id": "flux",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Flux",
     "description": "Command line tool (flux)",
     "documentationURL": "https://fluxcd.io/flux",
