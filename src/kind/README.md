@@ -1,13 +1,13 @@
 
-# Argo CD (argocd)
+# Kubernetes in Docker CLI (kind)
 
-Command line tool (argocd)
+Command line tool (kind)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/argocd:1": {}
+    "ghcr.io/ljtill/features/kind:1": {}
 }
 ```
 
@@ -17,8 +17,15 @@ Command line tool (argocd)
 |-----|-----|-----|-----|
 
 
+## Customizations
+
+### VS Code Extensions
+
+- `ms-azuretools.vscode-docker`
+- `ms-kubernetes-tools.vscode-kubernetes-tools`
+
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/argocd/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/kind/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
