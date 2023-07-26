@@ -17,6 +17,7 @@ jobs:
           - flux
           - helm
           - kind
+          - kubebuilder
           - kubectl
           - pulumi
           - spin
