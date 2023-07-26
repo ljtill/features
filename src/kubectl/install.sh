@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+cd /tmp
+
 check() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
         if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
