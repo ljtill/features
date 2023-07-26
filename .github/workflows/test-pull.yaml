@@ -18,6 +18,7 @@ jobs:
             flux: ./**/flux/**
             helm: ./**/helm/**
             kind: ./**/kind/**
+            kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
             pulumi: ./**/pulumi/**
             spin: ./**/spin/**
