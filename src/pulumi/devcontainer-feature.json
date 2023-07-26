@@ -1,6 +1,6 @@
 {
     "id": "pulumi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Pulumi",
     "description": "Command line tool (pulumi)",
     "documentationURL": "https://www.pulumi.com/docs",
