@@ -1,6 +1,6 @@
 {
     "tools": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "argocd": {},
             "clusterctl": {},
