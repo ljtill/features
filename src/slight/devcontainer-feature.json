@@ -1,0 +1,9 @@
+{
+    "id": "slight",
+    "version": "1.0.0",
+    "name": "Slight",
+    "description": "Command line tool (slight)",
+    "documentationURL": "https://deislabs.github.io/spiderlightning/",
+    "options": {},
+    "customizations": {}
+}
