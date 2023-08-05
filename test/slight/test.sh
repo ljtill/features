@@ -6,7 +6,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" slight verison
+check "version" slight --verison
 
 # Report result
 reportResults
