@@ -22,9 +22,9 @@ install() {
     curl -Lo ./slight-linux-x86_64.tar.gz https://github.com/deislabs/spiderlightning/releases/download/v"$version"/slight-linux-x86_64.tar.gz
     tar -zxof ./slight-linux-x86_64.tar.gz
     rm -f ./slight-linux-x86_64.tar.gz
-    chmod +x ./slight
-    chown root:root ./slight
-    mv ./spin /usr/local/bin/slight
+    chmod +x ./release/slight
+    chown root:root ./release/slight
+    mv ./release/slight /usr/local/bin/slight
 }
 
 echo "Activating feature 'slight'"
