@@ -10,6 +10,7 @@
             "kubebuilder": {},
             "kubectl": {},
             "pulumi": {},
+            "slight": {},
             "spin": {},
             "wasmtime": {}
         }

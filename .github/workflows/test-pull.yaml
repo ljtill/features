@@ -21,6 +21,7 @@ jobs:
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
             pulumi: ./**/pulumi/**
+            slight: ./**/slight/**
             spin: ./**/spin/**
             wasmtime: ./**/wasmtime/**
 
