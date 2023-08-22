@@ -24,6 +24,18 @@ install() {
     mv ./kubectl /usr/local/bin/kubectl
 }
 
+options() {
+    if [ "${KUBELOGIN}" = "true" ]; then
+        curl -Lo ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
+        unzip ./kubelogin-linux-amd64.zip
+        rm ./kubelogin-linux-amd64.zip
+        chmod +x ./bin/linux_amd64/kubelogin
+        chown root:root ./bin/linux_amd64/kubelogin
+        mv ./bin/linux_amd64/kubelogin /usr/local/bin/kubelogin
+    fi
+}
+
 echo "Activating feature 'kubectl'"
 
 install
+options
