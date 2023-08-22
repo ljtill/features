@@ -1,0 +1,11 @@
+{
+    "kubelogin": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "kubectl": {
+                "kubelogin": "true"
+            }
+        }
+    }
+}
