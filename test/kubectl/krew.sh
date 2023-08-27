@@ -2,7 +2,9 @@
 
 set -e
 
-printenv
+ls -al "$KREW_ROOT"/bin
+ls -al "$KREW_ROOT"/store/krew/
+ls -al "$KREW_ROOT"/store/krew/v0.4.4/
 
 # Import test library
 source dev-container-features-test-lib
@@ -14,7 +16,7 @@ check "vscode" whoami | grep vscode
 check "kubectl" kubectl version --client=true --output=json
 
 # Options-specific tests
-check "krew" bash -c "kubectl krew version"
+check "krew" kubectl krew version
 
 # Report result
 reportResults
