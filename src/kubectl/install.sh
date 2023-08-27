@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cd /tmp
+cd "$(mktemp -d)"
 
 check() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
@@ -29,14 +29,11 @@ options() {
         curl -Lo ./krew-linux_amd64.tar.gz https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz
         tar -zxof ./krew-linux_amd64.tar.gz
         ./krew-linux_amd64 install krew
-        rm ./krew-linux_amd64.tar.gz
-        rm ./krew-linux_amd64
         chmod -R +rx /usr/local/krew/store/krew
     fi
     if [ "${KUBELOGIN}" = "true" ]; then
         curl -Lo ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
         unzip ./kubelogin-linux-amd64.zip
-        rm ./kubelogin-linux-amd64.zip
         chmod +x ./bin/linux_amd64/kubelogin
         chown root:root ./bin/linux_amd64/kubelogin
         mv ./bin/linux_amd64/kubelogin /usr/local/bin/kubelogin
