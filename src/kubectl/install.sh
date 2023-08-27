@@ -31,6 +31,7 @@ options() {
         ./krew-linux_amd64 install krew
         rm ./krew-linux_amd64.tar.gz
         rm ./krew-linux_amd64
+        chmod -R +rx /usr/local/krew/store/krew
     fi
     if [ "${KUBELOGIN}" = "true" ]; then
         curl -Lo ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
