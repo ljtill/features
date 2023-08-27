@@ -26,8 +26,6 @@ install() {
 
 options() {
     if [ "${KREW}" = "true" ]; then
-        export KREW_ROOT="/usr/local/krew"
-        export PATH="${KREW_ROOT}/bin:${PATH}"
         curl -Lo ./krew-linux_amd64.tar.gz https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz
         tar -zxof ./krew-linux_amd64.tar.gz
         ./krew-linux_amd64 install krew
