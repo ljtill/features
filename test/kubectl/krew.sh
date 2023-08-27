@@ -14,7 +14,7 @@ check "vscode" whoami | grep vscode
 check "kubectl" kubectl version --client=true --output=json
 
 # Options-specific tests
-check "krew" kubectl krew version
+check "krew" bash -c "kubectl krew version"
 
 # Report result
 reportResults
