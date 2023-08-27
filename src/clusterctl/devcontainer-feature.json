@@ -1,6 +1,6 @@
 {
     "id": "clusterctl",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "Cluster API",
     "description": "Command line tool (clusterctl)",
     "documentationURL": "https://cluster-api.sigs.k8s.io",
