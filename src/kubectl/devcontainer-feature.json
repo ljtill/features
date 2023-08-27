@@ -1,13 +1,18 @@
 {
     "id": "kubectl",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "name": "Kubernetes CLI",
     "description": "Command line tool (kubectl)",
     "documentationURL": "https://kubernetes.io/docs/reference/kubectl",
     "options": {
         "kubelogin": {
             "type": "boolean",
-            "description": "Optionally install Azure Kubelogin (https://aka.ms/aks/kubelogin)",
+            "description": "Optionally install kubelogin (https://aka.ms/aks/kubelogin)",
+            "default": false
+        },
+        "nodeshell": {
+            "type": "boolean",
+            "description": "Optionally install node-shell (https://github.com/kvaps/kubectl-node-shell)",
             "default": false
         }
     },
