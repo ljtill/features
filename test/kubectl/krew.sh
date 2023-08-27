@@ -2,6 +2,8 @@
 
 set -e
 
+ls -al "$KREW_ROOT"
+
 # Import test library
 source dev-container-features-test-lib
 
