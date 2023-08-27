@@ -15,7 +15,8 @@ Command line tool (kubectl)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| kubelogin | Optionally install Azure Kubelogin (https://aka.ms/aks/kubelogin) | boolean | false |
+| kubelogin | Optionally install kubelogin (https://aka.ms/aks/kubelogin) | boolean | false |
+| nodeshell | Optionally install node-shell (https://github.com/kvaps/kubectl-node-shell) | boolean | false |
 
 ## Customizations
 
