@@ -12,7 +12,7 @@ check "vscode" whoami | grep vscode
 check "kubectl" kubectl version --client=true --output=json
 
 # Options-specific tests
-check "node-shell" kubectl node-shell --version
+check "nodeshell" kubectl node-shell --version
 
 # Report result
 reportResults
