@@ -5,9 +5,6 @@ set -e
 # Import test library
 source dev-container-features-test-lib
 
-export KREW_ROOT="/usr/local/krew"
-export PATH="${KREW_ROOT}/bin:${PATH}"
-
 # Check the user
 check "vscode" whoami | grep vscode
 
@@ -15,7 +12,7 @@ check "vscode" whoami | grep vscode
 check "kubectl" kubectl version --client=true --output=json
 
 # Options-specific tests
-check "krew" kubectl krew version
+check "krew" kubectl-krew version
 
 # Report result
 reportResults
