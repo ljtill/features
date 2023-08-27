@@ -8,7 +8,7 @@
         "krew": {
             "type": "boolean",
             "description": "Optionally install krew (https://github.com/kubernetes-sigs/krew)",
-            "default": true
+            "default": false
         },
         "kubelogin": {
             "type": "boolean",
