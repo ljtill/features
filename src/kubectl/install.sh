@@ -15,7 +15,7 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates
+check curl ca-certificates git
 
 install() {
     curl -Lo ./kubectl https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
@@ -25,6 +25,14 @@ install() {
 }
 
 options() {
+    if [ "${KREW}" = "true" ]; then
+        curl -Lo ./krew-linux_amd64.tar.gz https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz
+        tar -zxof ./krew-linux_amd64.tar.gz
+        ./krew-linux_amd64 install krew
+        rm ./krew-linux_amd64.tar.gz
+        rm ./krew-linux_amd64
+        chmod -R +rx /usr/local/krew/store/krew
+    fi
     if [ "${KUBELOGIN}" = "true" ]; then
         curl -Lo ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
         unzip ./kubelogin-linux-amd64.zip
