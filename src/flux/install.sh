@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cd /tmp
+cd "$(mktemp -d)"
 
 check() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
@@ -21,7 +21,6 @@ install() {
     version=$(curl -sL https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r ".tag_name" | sed 's/v//')
     curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$version"/flux_"$version"_linux_amd64.tar.gz
     tar -zxof ./flux_linux_amd64.tar.gz
-    rm -f ./flux_linux_amd64.tar.gz
     chmod +x ./flux
     chown root:root ./flux
     mv ./flux /usr/local/bin/flux
