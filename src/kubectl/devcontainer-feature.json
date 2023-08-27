@@ -30,6 +30,6 @@
     },
     "containerEnv": {
         "KREW_ROOT": "/usr/local/krew",
-        "PATH": "$KREW_ROOT/bin:$PATH"
+        "PATH": "${KREW_ROOT}/bin:${PATH}"
     }
 }
