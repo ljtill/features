@@ -5,6 +5,11 @@
     "description": "Command line tool (kubectl)",
     "documentationURL": "https://kubernetes.io/docs/reference/kubectl",
     "options": {
+        "krew": {
+            "type": "boolean",
+            "description": "Optionally install krew (https://github.com/kubernetes-sigs/krew)",
+            "default": true
+        },
         "kubelogin": {
             "type": "boolean",
             "description": "Optionally install kubelogin (https://aka.ms/aks/kubelogin)",
@@ -22,5 +27,9 @@
                 "ms-kubernetes-tools.vscode-kubernetes-tools"
             ]
         }
+    },
+    "containerEnv": {
+        "KREW_ROOT": "/usr/local/krew",
+        "PATH": "$KREW_ROOT/bin:$PATH"
     }
 }
