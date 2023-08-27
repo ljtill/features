@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cd /tmp
+cd "$(mktemp -d)"
 
 check() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
