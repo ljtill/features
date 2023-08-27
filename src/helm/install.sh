@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cd /tmp
+cd "$(mktemp -d)"
 
 check() {
     if ! dpkg -s "$@" > /dev/null 2>&1; then
@@ -21,7 +21,6 @@ install() {
     version=$(curl -sL https://api.github.com/repos/helm/helm/releases/latest | jq -r ".tag_name" | sed 's/v//')
     curl -Lo ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"$version"-linux-amd64.tar.gz
     tar -zxof ./helm-linux-amd64.tar.gz
-    rm -f ./helm-linux-amd64.tar.gz
     chmod +x ./linux-amd64/helm
     chown root:root ./linux-amd64/helm
     mv ./linux-amd64/helm /usr/local/bin/helm

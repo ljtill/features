@@ -1,6 +1,6 @@
 {
     "id": "helm",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "name": "Helm",
     "description": "Command line tool (helm)",
     "documentationURL": "https://helm.sh/docs",
