@@ -15,7 +15,7 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates
+check curl ca-certificates jq
 
 install() {
     version=$(curl -sL https://api.github.com/repos/istio/istio/releases | jq -r "map(select(.prerelease == false)) | first | .tag_name")
