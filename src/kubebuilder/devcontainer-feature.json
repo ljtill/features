@@ -1,9 +1,15 @@
 {
     "id": "kubebuilder",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "name": "Kubebuilder",
     "description": "Command line tool (kubebuilder)",
     "documentationURL": "https://book.kubebuilder.io",
-    "options": {},
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of kubebuilder",
+            "default": "latest"
+        }
+    },
     "customizations": {}
 }
