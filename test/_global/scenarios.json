@@ -6,6 +6,7 @@
             "clusterctl": {},
             "flux": {},
             "helm": {},
+            "istioctl": {},
             "kind": {},
             "kubebuilder": {},
             "kubectl": {},
