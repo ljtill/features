@@ -1,0 +1,9 @@
+{
+    "id": "istioctl",
+    "version": "1.0.0",
+    "name": "Istio",
+    "description": "Command line tool (istioctl)",
+    "documentationURL": "https://istio.io/latest/docs",
+    "options": {},
+    "customizations": {}
+}
