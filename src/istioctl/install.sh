@@ -17,10 +17,17 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+download() {
+    tag_name=$(curl -sL https://api.github.com/repos/istio/istio/releases | jq -r "map(select(.prerelease == false)) | first | .tag_name")
+    if [ "${VERSION}" = "latest" ]; then
+        curl -Lo ./istioctl-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/$tag_name/istioctl-$tag_name-linux-amd64.tar.gz
+    else
+        curl -Lo ./istioctl-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/$VERSION/istioctl-$VERSION-linux-amd64.tar.gz
+    fi
+}
+
 install() {
-    version=$(curl -sL https://api.github.com/repos/istio/istio/releases | jq -r "map(select(.prerelease == false)) | first | .tag_name")
-    curl -Lo ./istioctl-$version-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/$version/istioctl-$version-linux-amd64.tar.gz
-    tar -zxof ./istioctl-$version-linux-amd64.tar.gz
+    tar -zxof ./istioctl-linux-amd64.tar.gz
     chmod +x ./istioctl
     chown root:root ./istioctl
     mv ./istioctl /usr/local/bin/istioctl
@@ -28,4 +35,5 @@ install() {
 
 echo "Activating feature 'istioctl'"
 
+download
 install
