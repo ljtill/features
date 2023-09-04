@@ -17,8 +17,15 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates
 
+download() {
+    if [ "${VERSION}" = "latest" ]; then
+        curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/latest/download/kind-linux-amd64
+    else
+        curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/v$VERSION/download/kind-linux-amd64
+    fi
+}
+
 install() {
-    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/latest/download/kind-linux-amd64
     chmod +x ./kind
     chown root:root ./kind
     mv ./kind /usr/local/bin/kind
@@ -26,4 +33,5 @@ install() {
 
 echo "Activating feature 'kind'"
 
+download
 install
