@@ -10,6 +10,7 @@ check "version" argocd version --client --output json
 check "version" clusterctl version
 check "version" flux version --client --output json
 check "version" helm version
+check "version" istioctl version --remote=false
 check "version" kind version
 check "version" kubebuilder version
 check "version" kubectl version --client=true --output=json

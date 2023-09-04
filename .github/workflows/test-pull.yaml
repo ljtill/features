@@ -17,6 +17,7 @@ jobs:
             clusterctl: ./**/clusterctl/**
             flux: ./**/flux/**
             helm: ./**/helm/**
+            istioctl: ./**/istioctl/**
             kind: ./**/kind/**
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
