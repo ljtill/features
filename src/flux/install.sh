@@ -17,9 +17,16 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+download() {
+    tag_name=$(curl -sL https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r "map(select(.prerelease == false)) | first | .tag_name" | sed 's/v//')
+    if [ "${VERSION}" = "latest" ]; then
+        curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$tag_name"/flux_"$tag_name"_linux_amd64.tar.gz
+    else
+        curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$VERSION"/flux_"$VERSION"_linux_amd64.tar.gz
+    fi
+}
+
 install() {
-    version=$(curl -sL https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r ".tag_name" | sed 's/v//')
-    curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$version"/flux_"$version"_linux_amd64.tar.gz
     tar -zxof ./flux_linux_amd64.tar.gz
     chmod +x ./flux
     chown root:root ./flux
@@ -28,4 +35,5 @@ install() {
 
 echo "Activating feature 'flux'"
 
+download
 install
