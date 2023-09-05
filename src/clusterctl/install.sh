@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/download/v$VERSION/clusterctl-linux-amd64
+    curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/download/v"${VERSION}"/clusterctl-linux-amd64
 }
 
 install() {
