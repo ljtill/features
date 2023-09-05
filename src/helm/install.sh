@@ -17,9 +17,19 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/helm/helm/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"${VERSION}"-linux-amd64.tar.gz
+}
+
 install() {
-    version=$(curl -sL https://api.github.com/repos/helm/helm/releases/latest | jq -r ".tag_name" | sed 's/v//')
-    curl -Lo ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"$version"-linux-amd64.tar.gz
     tar -zxof ./helm-linux-amd64.tar.gz
     chmod +x ./linux-amd64/helm
     chown root:root ./linux-amd64/helm
@@ -29,4 +39,6 @@ install() {
 
 echo "Activating feature 'helm'"
 
+version
+download
 install
