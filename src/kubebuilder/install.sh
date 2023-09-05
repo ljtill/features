@@ -15,10 +15,21 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates
+check curl ca-certificates jq
+
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes-sigs/kubebuilder/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v$VERSION/kubebuilder_linux_amd64
+}
 
 install() {
-    curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/latest/download/kubebuilder_linux_amd64
     chmod +x ./kubebuilder
     chown root:root ./kubebuilder
     mv ./kubebuilder /usr/local/bin/kubebuilder
@@ -26,4 +37,6 @@ install() {
 
 echo "Activating feature 'kubebuilder'"
 
+version
+download
 install
