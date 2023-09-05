@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$VERSION"/flux_"$VERSION"_linux_amd64.tar.gz
+    curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"${VERSION}"/flux_"${VERSION}"_linux_amd64.tar.gz
 }
 
 install() {
