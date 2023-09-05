@@ -24,15 +24,15 @@ version() {
 }
 
 download() {
-    curl -Lo ./wasmtime-v"$version"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"$version"/wasmtime-v"$version"-x86_64-linux.tar.xz
+    curl -Lo ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz
 }
 
 install() {
-    xz -d ./wasmtime-v"$version"-x86_64-linux.tar.xz
-    tar -xof ./wasmtime-v"$version"-x86_64-linux.tar
-    chmod +x ./wasmtime-v"$version"-x86_64-linux/wasmtime
-    chown root:root ./wasmtime-v"$version"-x86_64-linux/wasmtime
-    mv ./wasmtime-v"$version"-x86_64-linux/wasmtime /usr/local/bin/wasmtime
+    xz -d ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz
+    tar -xof ./wasmtime-v"${VERSION}"-x86_64-linux.tar
+    chmod +x ./wasmtime-v"${VERSION}"-x86_64-linux/wasmtime
+    chown root:root ./wasmtime-v"${VERSION}"-x86_64-linux/wasmtime
+    mv ./wasmtime-v"${VERSION}"-x86_64-linux/wasmtime /usr/local/bin/wasmtime
 }
 
 echo "Activating feature 'wasmtime'"
