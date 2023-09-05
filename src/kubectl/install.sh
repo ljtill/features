@@ -67,10 +67,7 @@ options() {
 
 echo "Activating feature 'kubectl'"
 
-<<<<<<< Updated upstream
-=======
 version
->>>>>>> Stashed changes
 download
 install
 options
