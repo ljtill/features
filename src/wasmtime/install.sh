@@ -20,6 +20,8 @@ check curl ca-certificates jq xz-utils
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
