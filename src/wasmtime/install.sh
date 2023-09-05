@@ -20,7 +20,7 @@ check curl ca-certificates jq xz-utils
 download() {
     tag_name=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
     if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/latest/wasmtime-v"$tag_name"-x86_64-linux.tar.xz
+        curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/latest/download/wasmtime-v"$tag_name"-x86_64-linux.tar.xz
     else
         curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"$version"/wasmtime-v"$version"-x86_64-linux.tar.xz
     fi
