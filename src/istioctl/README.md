@@ -15,7 +15,7 @@ Command line tool (istioctl)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of istioctl | string | latest |
 
 
 

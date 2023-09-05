@@ -15,7 +15,7 @@ Command line tool (clusterctl)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of clusterctl | string | latest |
 
 
 

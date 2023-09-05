@@ -15,7 +15,7 @@ Command line tool (kind)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of kind | string | latest |
 
 ## Customizations
 

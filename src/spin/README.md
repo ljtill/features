@@ -15,7 +15,7 @@ Command line tool (spin)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of spin | string | latest |
 
 ## Customizations
 

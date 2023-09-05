@@ -15,7 +15,7 @@ Command line tool (wasmtime)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of wasmtime | string | latest |
 
 
 

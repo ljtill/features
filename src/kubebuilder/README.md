@@ -15,7 +15,7 @@ Command line tool (kubebuilder)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of kubebuilder | string | latest |
 
 
 
