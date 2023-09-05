@@ -8,9 +8,6 @@ source dev-container-features-test-lib
 # Check the user
 check "vscode" whoami | grep vscode
 
-# Feature-specific tests
-check "version" wasmtime --version
-
 # Options-specific tests
 check "version" wasmtime --version | grep "12.0.1"
 
