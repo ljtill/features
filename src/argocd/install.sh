@@ -17,12 +17,14 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates
 
-download() {
+version() {
     if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-    else
-        curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/v$VERSION/download/argocd-linux-amd64
+        export VERSION=$(curl -sL https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
     fi
+}
+
+download() {
+    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/v$VERSION/download/argocd-linux-amd64
 }
 
 install() {
@@ -33,5 +35,6 @@ install() {
 
 echo "Activating feature 'argocd'"
 
+version
 download
 install
