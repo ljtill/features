@@ -20,11 +20,13 @@ check curl ca-certificates
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/kubernetes-sigs/cluster-api/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/v$VERSION/download/clusterctl-linux-amd64
+    curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/download/v$VERSION/clusterctl-linux-amd64
 }
 
 install() {
