@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v$VERSION/kubebuilder_linux_amd64
+    curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v"${VERSION}"/kubebuilder_linux_amd64
 }
 
 install() {
