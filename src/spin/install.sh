@@ -17,9 +17,19 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/fermyon/spin/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./spin-linux-amd64.tar.gz https://github.com/fermyon/spin/releases/download/v"${VERSION}"/spin-v"${VERSION}"-linux-amd64.tar.gz
+}
+
 install() {
-    version=$(curl -sL https://api.github.com/repos/fermyon/spin/releases/latest | jq -r ".tag_name" | sed 's/v//')
-    curl -Lo ./spin-linux-amd64.tar.gz https://github.com/fermyon/spin/releases/download/v"$version"/spin-v"$version"-linux-amd64.tar.gz
     tar -zxof ./spin-linux-amd64.tar.gz
     chmod +x ./spin
     chown root:root ./spin
@@ -28,4 +38,6 @@ install() {
 
 echo "Activating feature 'spin'"
 
+version
+download
 install
