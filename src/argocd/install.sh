@@ -20,11 +20,13 @@ check curl ca-certificates jq
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/v$VERSION/download/argocd-linux-amd64
+    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/download/v$VERSION/argocd-linux-amd64
 }
 
 install() {
