@@ -15,7 +15,7 @@ Command line tool (slight)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of slight | string | latest |
 
 
 

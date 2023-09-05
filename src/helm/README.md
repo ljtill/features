@@ -15,7 +15,7 @@ Command line tool (helm)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of helm | string | latest |
 
 
 

@@ -15,7 +15,7 @@ Command line tool (pulumi)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of pulumi | string | latest |
 
 ## Customizations
 

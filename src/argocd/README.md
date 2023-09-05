@@ -1,7 +1,7 @@
 
 # Argo CD (argocd)
 
-Command line tool (argocd)
+Command line tool (argo-cd)
 
 ## Example Usage
 
@@ -15,7 +15,7 @@ Command line tool (argocd)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of argo-cd | string | latest |
 
 
 

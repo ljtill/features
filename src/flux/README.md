@@ -15,7 +15,7 @@ Command line tool (flux)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| version | Select version of flux | string | latest |
 
 ## Customizations
 
