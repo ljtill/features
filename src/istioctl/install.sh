@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./istioctl-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/$VERSION/istioctl-$VERSION-linux-amd64.tar.gz
+    curl -Lo ./istioctl-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/"${VERSION}"/istioctl-"${VERSION}"-linux-amd64.tar.gz
 }
 
 install() {
