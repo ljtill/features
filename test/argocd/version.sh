@@ -9,7 +9,7 @@ source dev-container-features-test-lib
 check "vscode" whoami | grep vscode
 
 # Feature-specific tests
-check "argocd" argocd version --client --output json
+check "version" argocd version --client --output json
 
 # Options-specific tests
 check "version" argocd version --client --output json | grep "2.8.2"
