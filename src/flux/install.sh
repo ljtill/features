@@ -18,11 +18,11 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates jq
 
 download() {
-    tag_name=$(curl -sL https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r ".tag_name")
+    tag_name=$(curl -sL https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r ".tag_name" | sed 's/v//')
     if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/"$tag_name"/flux_"$tag_name"_linux_amd64.tar.gz
+        curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$tag_name"/flux_"$tag_name"_linux_amd64.tar.gz
     else
-        curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/"$VERSION"/flux_"$VERSION"_linux_amd64.tar.gz
+        curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"$VERSION"/flux_"$VERSION"_linux_amd64.tar.gz
     fi
 }
 
