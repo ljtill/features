@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/download/v$VERSION/argocd-linux-amd64
+    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64
 }
 
 install() {
