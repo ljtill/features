@@ -37,5 +37,6 @@ install() {
 
 echo "Activating feature 'wasmtime'"
 
+version
 download
 install
