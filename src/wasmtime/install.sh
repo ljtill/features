@@ -17,21 +17,22 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq xz-utils
 
-download() {
-    tag_name=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
+version() {
     if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/latest/download/wasmtime-v"$tag_name"-x86_64-linux.tar.xz
-    else
-        curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"$version"/wasmtime-v"$version"-x86_64-linux.tar.xz
+        VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
     fi
 }
 
+download() {
+    curl -Lo ./wasmtime-v"$version"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"$version"/wasmtime-v"$version"-x86_64-linux.tar.xz
+}
+
 install() {
-    xz -d ./wasmtime-x86_64-linux.tar.xz
-    tar -xof ./wasmtime-x86_64-linux.tar
-    chmod +x ./wasmtime-x86_64-linux/wasmtime
-    chown root:root ./wasmtime-x86_64-linux/wasmtime
-    mv ./wasmtime-x86_64-linux/wasmtime /usr/local/bin/wasmtime
+    xz -d ./wasmtime-v"$version"-x86_64-linux.tar.xz
+    tar -xof ./wasmtime-v"$version"-x86_64-linux.tar
+    chmod +x ./wasmtime-v"$version"-x86_64-linux/wasmtime
+    chown root:root ./wasmtime-v"$version"-x86_64-linux/wasmtime
+    mv ./wasmtime-v"$version"-x86_64-linux/wasmtime /usr/local/bin/wasmtime
 }
 
 echo "Activating feature 'wasmtime'"
