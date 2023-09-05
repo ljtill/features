@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "argocd": {
+                "version": "2.8.2"
+            }
+        }
+    }
+}
