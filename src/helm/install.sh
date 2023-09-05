@@ -39,5 +39,6 @@ install() {
 
 echo "Activating feature 'helm'"
 
+version
 download
 install
