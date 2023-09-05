@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"$VERSION"-linux-amd64.tar.gz
+    curl -Lo ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"${VERSION}"-linux-amd64.tar.gz
 }
 
 install() {
