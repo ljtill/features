@@ -17,8 +17,19 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes-sigs/cluster-api/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/download/v"${VERSION}"/clusterctl-linux-amd64
+}
+
 install() {
-    curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/latest/download/clusterctl-linux-amd64
     chmod +x ./clusterctl
     chown root:root ./clusterctl
     mv ./clusterctl /usr/local/bin/clusterctl
@@ -26,4 +37,6 @@ install() {
 
 echo "Activating feature 'clusterctl'"
 
+version
+download
 install
