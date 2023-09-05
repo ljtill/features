@@ -15,7 +15,7 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates
+check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
