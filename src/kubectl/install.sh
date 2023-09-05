@@ -19,14 +19,14 @@ check curl ca-certificates jq git
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes/kubernetes/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sL https://dl.k8s.io/release/stable.txt | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -Lo ./kubectl https://dl.k8s.io/release/"${VERSION}"/bin/linux/amd64/kubectl
+    curl -Lo ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl
 }
 
 install() {
