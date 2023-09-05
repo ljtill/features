@@ -17,9 +17,19 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/pulumi/pulumi/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./pulumi-linux-x64.tar.gz https://get.pulumi.com/releases/sdk/pulumi-v"${VERSION}"-linux-x64.tar.gz
+}
+
 install() {
-    version=$(curl -sL https://api.github.com/repos/pulumi/pulumi/releases/latest | jq -r ".tag_name" | sed 's/v//')
-    curl -Lo ./pulumi-linux-x64.tar.gz https://get.pulumi.com/releases/sdk/pulumi-v"$version"-linux-x64.tar.gz
     tar -zxof ./pulumi-linux-x64.tar.gz
     chmod +x ./pulumi/pulumi
     chown root:root ./pulumi/pulumi
@@ -28,4 +38,6 @@ install() {
 
 echo "Activating feature 'pulumi'"
 
+version
+download
 install

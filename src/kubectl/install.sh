@@ -15,10 +15,29 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates git
+check curl ca-certificates jq git
+
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes/kubernetes/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./kubectl https://dl.k8s.io/release/"${VERSION}"/bin/linux/amd64/kubectl
+}
+
+download() {
+    if [ "${VERSION}" = "latest" ]; then
+        curl -Lo ./kubectl https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+    else
+        curl -Lo ./kubectl https://dl.k8s.io/release/v$VERSION/bin/linux/amd64/kubectl
+    fi
+}
 
 install() {
-    curl -Lo ./kubectl https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
     chmod +x ./kubectl
     chown root:root ./kubectl
     mv ./kubectl /usr/local/bin/kubectl
@@ -48,5 +67,7 @@ options() {
 
 echo "Activating feature 'kubectl'"
 
+version
+download
 install
 options

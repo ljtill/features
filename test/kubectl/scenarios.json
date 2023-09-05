@@ -1,4 +1,13 @@
 {
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "kubectl": {
+                "version": "1.28.1"
+            }
+        }
+    },
     "krew": {
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "user": "vscode",
