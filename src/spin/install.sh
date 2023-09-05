@@ -20,7 +20,7 @@ check curl ca-certificates jq
 download() {
     tag_name=$(curl -sL https://api.github.com/repos/fermyon/spin/releases/latest | jq -r ".tag_name" | sed 's/v//')
     if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./spin-linux-amd64.tar.gz https://github.com/fermyon/spin/releases/download/latest/spin-v"$tag_name"-linux-amd64.tar.gz
+        curl -Lo ./spin-linux-amd64.tar.gz https://github.com/fermyon/spin/releases/latest/download/spin-v"$tag_name"-linux-amd64.tar.gz
     else
         curl -Lo ./spin-linux-amd64.tar.gz https://github.com/fermyon/spin/releases/download/v$VERSION/spin-v"$VERSION"-linux-amd64.tar.gz
     fi
