@@ -26,7 +26,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/v"${VERSION}"/download/kind-linux-amd64
+    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v"${VERSION}"/kind-linux-amd64
 }
 
 install() {
