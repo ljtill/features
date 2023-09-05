@@ -18,7 +18,7 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates jq
 
 download() {
-    tag_name=$(curl -sL https://api.github.com/repos/deislabs/spiderlightning/releases | jq -r "map(select(.prerelease == false)) | first | .tag_name" | sed 's/v//')
+    tag_name=$(curl -sL https://api.github.com/repos/deislabs/spiderlightning/releases | jq -r "first | .tag_name" | sed 's/v//')
     if [ "${VERSION}" = "latest" ]; then
         curl -Lo ./slight-linux-x86_64.tar.gz https://github.com/deislabs/spiderlightning/releases/download/v"$tag_name"/slight-linux-x86_64.tar.gz
     else
