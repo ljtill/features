@@ -15,7 +15,19 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates git
+check curl ca-certificates jq git
+
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes/kubernetes/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./kubectl https://dl.k8s.io/release/"${VERSION}"/bin/linux/amd64/kubectl
+}
 
 download() {
     if [ "${VERSION}" = "latest" ]; then
@@ -55,6 +67,10 @@ options() {
 
 echo "Activating feature 'kubectl'"
 
+<<<<<<< Updated upstream
+=======
+version
+>>>>>>> Stashed changes
 download
 install
 options
