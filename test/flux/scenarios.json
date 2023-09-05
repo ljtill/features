@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "flux": {
+                "version": "2.1.0"
+            }
+        }
+    }
+}
