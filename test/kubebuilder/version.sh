@@ -8,9 +8,6 @@ source dev-container-features-test-lib
 # Check the user
 check "vscode" whoami | grep vscode
 
-# Feature-specific tests
-check "version" kubebuilder version
-
 # Options-specific tests
 check "version" kubebuilder version | grep "3.11.1"
 
