@@ -15,14 +15,18 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates
+check curl ca-certificates jq
+
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes-sigs/kind/releases/latest | jq -r ".tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
 
 download() {
-    if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/latest/download/kind-linux-amd64
-    else
-        curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/v$VERSION/download/kind-linux-amd64
-    fi
+    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/v"${VERSION}"/download/kind-linux-amd64
 }
 
 install() {
@@ -33,5 +37,6 @@ install() {
 
 echo "Activating feature 'kind'"
 
+version
 download
 install
