@@ -17,9 +17,19 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+version() {
+    if [ "${VERSION}" = "latest" ]; then
+        export VERSION=$(curl -sL https://api.github.com/repos/deislabs/spiderlightning/releases | jq -r "first | .tag_name" | sed 's/v//')
+    else
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
+    fi
+}
+
+download() {
+    curl -Lo ./slight-linux-x86_64.tar.gz https://github.com/deislabs/spiderlightning/releases/download/v"${VERSION}"/slight-linux-x86_64.tar.gz
+}
+
 install() {
-    version=$(curl -sL https://api.github.com/repos/deislabs/spiderlightning/releases | jq -r ".[0].tag_name" | sed 's/v//')
-    curl -Lo ./slight-linux-x86_64.tar.gz https://github.com/deislabs/spiderlightning/releases/download/v"$version"/slight-linux-x86_64.tar.gz
     tar -zxof ./slight-linux-x86_64.tar.gz
     chmod +x ./release/slight
     chown root:root ./release/slight
@@ -28,4 +38,6 @@ install() {
 
 echo "Activating feature 'slight'"
 
+version
+download
 install
