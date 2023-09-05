@@ -18,7 +18,7 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates jq xz-utils
 
 download() {
-    tag_name=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r "map(select(.prerelease == false)) | first | .tag_name" | sed 's/v//')
+    tag_name=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
     if [ "${VERSION}" = "latest" ]; then
         curl -Lo ./wasmtime-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/latest/wasmtime-v"$tag_name"-x86_64-linux.tar.xz
     else
