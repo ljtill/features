@@ -17,12 +17,16 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates
 
-download() {
+version() {
     if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/latest/download/kubebuilder_linux_amd64
+        export VERSION=$(curl -sL https://api.github.com/repos/kubernetes-sigs/kubebuilder/releases/latest | jq -r ".tag_name" | sed 's/v//')
     else
-        curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/v$VERSION/download/kubebuilder_linux_amd64
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
+}
+
+download() {
+    curl -Lo ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v$VERSION/kubebuilder_linux_amd64
 }
 
 install() {
@@ -33,5 +37,6 @@ install() {
 
 echo "Activating feature 'kubebuilder'"
 
+version
 download
 install
