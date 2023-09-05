@@ -29,14 +29,6 @@ download() {
     curl -Lo ./kubectl https://dl.k8s.io/release/"${VERSION}"/bin/linux/amd64/kubectl
 }
 
-download() {
-    if [ "${VERSION}" = "latest" ]; then
-        curl -Lo ./kubectl https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
-    else
-        curl -Lo ./kubectl https://dl.k8s.io/release/v$VERSION/bin/linux/amd64/kubectl
-    fi
-}
-
 install() {
     chmod +x ./kubectl
     chown root:root ./kubectl
