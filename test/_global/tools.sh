@@ -9,6 +9,7 @@ source dev-container-features-test-lib
 check "version" argocd version --client --output json
 check "version" clusterctl version
 check "version" flux version --client --output json
+check "version" func version
 check "version" helm version
 check "version" istioctl version --remote=false
 check "version" kind version

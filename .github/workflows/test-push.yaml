@@ -15,6 +15,7 @@ jobs:
           - argocd
           - clusterctl
           - flux
+          - func
           - helm
           - istioctl
           - kind

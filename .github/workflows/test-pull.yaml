@@ -16,6 +16,7 @@ jobs:
             argocd: ./**/argocd/**
             clusterctl: ./**/clusterctl/**
             flux: ./**/flux/**
+            func: ./**/func/**
             helm: ./**/helm/**
             istioctl: ./**/istioctl/**
             kind: ./**/kind/**
