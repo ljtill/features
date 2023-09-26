@@ -15,7 +15,7 @@ check() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-check curl ca-certificates jq unzip libicu72
+check curl ca-certificates jq unzip
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
