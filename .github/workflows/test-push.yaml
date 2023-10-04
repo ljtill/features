@@ -24,6 +24,7 @@ jobs:
           - pulumi
           - slight
           - spin
+          - tofu
           - wasmtime
     steps:
       - uses: actions/checkout@v3
