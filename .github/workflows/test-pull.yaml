@@ -25,6 +25,7 @@ jobs:
             pulumi: ./**/pulumi/**
             slight: ./**/slight/**
             spin: ./**/spin/**
+            tofu: ./**/tofu/**
             wasmtime: ./**/wasmtime/**
 
   test-features:
