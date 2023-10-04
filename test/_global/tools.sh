@@ -18,6 +18,7 @@ check "version" kubectl version --client=true --output=json
 check "version" pulumi version
 check "version" slight --version
 check "version" spin --version
+check "version" tofu version
 check "version" wasmtime --version
 
 # Report result
