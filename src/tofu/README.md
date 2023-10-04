@@ -1,13 +1,13 @@
 
-# Spin (spin)
+# OpenTofu (tofu)
 
-Command line tool (spin)
+Command line tool (tofu)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/spin:1": {}
+    "ghcr.io/ljtill/features/tofu:1": {}
 }
 ```
 
@@ -15,16 +15,10 @@ Command line tool (spin)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of spin | string | latest |
-
-## Customizations
-
-### VS Code Extensions
-
-- `fermyon.spin-vscode`
+| version | Select version of tofu | string | latest |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/spin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/tofu/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
