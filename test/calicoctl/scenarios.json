@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "calicoctl": {
+                "version": "v3.26.2"
+            }
+        }
+    }
+}
