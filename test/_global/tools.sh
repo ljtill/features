@@ -7,6 +7,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "version" argocd version --client --output json
+check "version" calicoctl version
 check "version" clusterctl version
 check "version" flux version --client --output json
 check "version" func version
