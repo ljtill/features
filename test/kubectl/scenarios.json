@@ -17,6 +17,15 @@
             }
         }
     },
+    "kubectx": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "kubectl": {
+                "kubectx": "true"
+            }
+        }
+    },
     "kubelogin": {
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "user": "vscode",
