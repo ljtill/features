@@ -42,6 +42,16 @@ options() {
         ./krew-linux_amd64 install krew
         chmod -R +rx /usr/local/krew/store/krew
     fi
+    if [ "${KUBECTX}" = "true" ]; then
+        curl -Lo ./kubectx https://github.com/ahmetb/kubectx/releases/latest/download/kubectx
+        curl -Lo ./kubens https://github.com/ahmetb/kubectx/releases/latest/download/kubens
+        chmod +x ./kubectx
+        chmod +x ./kubens
+        chown root:root ./kubectx
+        chown root:root ./kubens
+        mv ./kubectx /usr/local/bin/kubectx
+        mv ./kubens /usr/local/bin/kubens
+    fi
     if [ "${KUBELOGIN}" = "true" ]; then
         curl -Lo ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
         unzip ./kubelogin-linux-amd64.zip
