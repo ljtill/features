@@ -4,6 +4,7 @@
     "name": "Radius",
     "description": "Command line tool (rad)",
     "documentationURL": "https://docs.radapp.io/",
+    "postStartCommand": "rad bicep download",
     "options": {
         "version": {
             "type": "string",
@@ -20,6 +21,5 @@
     },
     "containerEnv": {
         "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "1"
-    },
-    "postStartCommand": "rad bicep download"
+    }
 }
