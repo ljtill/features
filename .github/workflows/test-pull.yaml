@@ -24,6 +24,7 @@ jobs:
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
             pulumi: ./**/pulumi/**
+            rad: ./**/rad/**
             slight: ./**/slight/**
             spin: ./**/spin/**
             tofu: ./**/tofu/**

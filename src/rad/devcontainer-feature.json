@@ -1,0 +1,25 @@
+{
+    "id": "rad",
+    "version": "1.0.0",
+    "name": "Radius",
+    "description": "Command line tool (rad)",
+    "documentationURL": "https://docs.radapp.io/",
+    "postStartCommand": "rad bicep download",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of rad",
+            "default": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.rad-vscode-bicep"
+            ]
+        }
+    },
+    "containerEnv": {
+        "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "1"
+    }
+}
