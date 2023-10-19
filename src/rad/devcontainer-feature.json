@@ -20,5 +20,6 @@
     },
     "containerEnv": {
         "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "1"
-    }
+    },
+    "postStartCommand": "rad bicep download"
 }

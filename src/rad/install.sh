@@ -35,13 +35,8 @@ install() {
     mv ./rad /usr/local/bin/rad
 }
 
-configure() {
-    rad bicep download
-}
-
 echo "Activating feature 'rad'"
 
 version
 download
 install
-configure
