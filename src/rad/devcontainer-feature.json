@@ -17,5 +17,8 @@
                 "ms-azuretools.rad-vscode-bicep"
             ]
         }
+    },
+    "containerEnv": {
+        "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "1"
     }
 }
