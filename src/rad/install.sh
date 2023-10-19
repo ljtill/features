@@ -36,7 +36,7 @@ install() {
 }
 
 configure() {
-    rad bicep downlo
+    rad bicep download
 }
 
 echo "Activating feature 'rad'"
