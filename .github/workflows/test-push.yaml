@@ -23,6 +23,7 @@ jobs:
           - kubebuilder
           - kubectl
           - pulumi
+          - rad
           - slight
           - spin
           - tofu

@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "rad": {
+                "version": "0.26.6"
+            }
+        }
+    }
+}
