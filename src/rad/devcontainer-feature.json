@@ -1,10 +1,10 @@
 {
     "id": "rad",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Radius",
     "description": "Command line tool (rad)",
     "documentationURL": "https://docs.radapp.io/",
-    "postStartCommand": "rad bicep download",
+    "postStartCommand": "su - vscode -c 'rad bicep download'",
     "options": {
         "version": {
             "type": "string",
