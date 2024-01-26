@@ -1,0 +1,15 @@
+{
+    "id": "zig",
+    "version": "1.0.0",
+    "name": "Zig CLI",
+    "description": "Command line tool (zig)",
+    "documentationURL": "https://ziglang.org/learn",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of zig",
+            "default": "latest"
+        }
+    },
+    "customizations": {}
+}
