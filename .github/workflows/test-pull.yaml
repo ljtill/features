@@ -29,6 +29,7 @@ jobs:
             spin: ./**/spin/**
             tofu: ./**/tofu/**
             wasmtime: ./**/wasmtime/**
+            zig: ./**/zig/**
 
   test-features:
     needs: [detect-changes]

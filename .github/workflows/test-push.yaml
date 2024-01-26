@@ -28,6 +28,7 @@ jobs:
           - spin
           - tofu
           - wasmtime
+          - zig
     steps:
       - uses: actions/checkout@v4
 
