@@ -26,15 +26,15 @@ version() {
 }
 
 download() {
-    curl -Lo ./zig-linux-x86_64-"${VERSION}".tar.xz https://ziglang.org/download/"${VERSION}"/zig-linux-x86_64-"${VERSION}".tar.xz
+    curl -Lo ./zig-linux-x86_64.tar.xz https://ziglang.org/download/"${VERSION}"/zig-linux-x86_64-"${VERSION}".tar.xz
 }
 
 install() {
-    xz -d ./zig-linux-x86_64-"${VERSION}".tar.xz
-    tar -xof ./zig-linux-x86_64-"${VERSION}".tar
-    chmod +x ./zig-linux-x86_64-"${VERSION}"/zig
-    chown root:root ./zig-linux-x86_64-"${VERSION}"/zig
-    mv ./zig-linux-x86_64-"${VERSION}"/zig /usr/local/bin/zig
+    xz -d ./zig-linux-x86_64.tar.xz
+    tar -xof ./zig-linux-x86_64.tar
+    chmod +x ./zig-linux-x86_64/zig
+    chown root:root ./zig-linux-x86_64/zig
+    mv ./zig-linux-x86_64/zig /usr/local/bin/zig
 }
 
 echo "Activating feature 'zig'"
