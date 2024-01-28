@@ -7,6 +7,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "version" argocd version --client --output json
+check "version" wit-bindgen --version
 check "version" calicoctl version
 check "version" clusterctl version
 check "version" flux version --client --output json
@@ -22,6 +23,7 @@ check "version" slight --version
 check "version" spin --version
 check "version" tofu version
 check "version" wasmtime --version
+check "version" zig version
 
 # Report result
 reportResults
