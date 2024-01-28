@@ -13,6 +13,7 @@ jobs:
       matrix:
         features:
           - argocd
+          - bindgen
           - calicoctl
           - clusterctl
           - flux
