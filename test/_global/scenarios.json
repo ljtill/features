@@ -3,6 +3,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "argocd": {},
+            "bindgen": {},
             "calicoctl": {},
             "clusterctl": {},
             "flux": {},
@@ -17,7 +18,8 @@
             "slight": {},
             "spin": {},
             "tofu": {},
-            "wasmtime": {}
+            "wasmtime": {},
+            "zig": {}
         }
     }
 }
