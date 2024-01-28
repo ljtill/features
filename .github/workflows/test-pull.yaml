@@ -14,6 +14,7 @@ jobs:
         with:
           filters: |
             argocd: ./**/argocd/**
+            bindgen: ./**/bindgen/**
             calicoctl: ./**/calicoctl/**
             clusterctl: ./**/clusterctl/**
             flux: ./**/flux/**
