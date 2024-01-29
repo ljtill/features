@@ -5,6 +5,7 @@
             "argocd": {},
             "bindgen": {},
             "calicoctl": {},
+            "cilium": {},
             "clusterctl": {},
             "flux": {},
             "func": {},
