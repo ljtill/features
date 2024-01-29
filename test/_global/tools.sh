@@ -9,6 +9,7 @@ source dev-container-features-test-lib
 check "version" argocd version --client --output json
 check "version" wit-bindgen --version
 check "version" calicoctl version
+check "version" cilium version --client
 check "version" clusterctl version
 check "version" flux version --client --output json
 check "version" func version

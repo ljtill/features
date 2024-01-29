@@ -16,6 +16,7 @@ jobs:
             argocd: ./**/argocd/**
             bindgen: ./**/bindgen/**
             calicoctl: ./**/calicoctl/**
+            cilium: ./**/cilium/**
             clusterctl: ./**/clusterctl/**
             flux: ./**/flux/**
             func: ./**/func/**
