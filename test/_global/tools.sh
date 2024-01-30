@@ -6,26 +6,26 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" argocd version --client --output json
-check "version" bicep --version
-check "version" wit-bindgen --version
-check "version" calicoctl version
-check "version" cilium version --client
-check "version" clusterctl version
-check "version" flux version --client --output json
-check "version" func version
-check "version" helm version
-check "version" istioctl version --remote=false
-check "version" kind version
-check "version" kubebuilder version
-check "version" kubectl version --client=true --output=json
-check "version" pulumi version
-check "version" rad version
-check "version" slight --version
-check "version" spin --version
-check "version" tofu version
-check "version" wasmtime --version
-check "version" zig version
+check "argocd" argocd version --client --output json
+check "bicep" bicep --version
+check "bindgen" wit-bindgen --version
+check "calicoctl" calicoctl version
+check "cilium" cilium version --client
+check "clusterctl" clusterctl version
+check "flux" flux version --client --output json
+check "func" func version
+check "helm" helm version
+check "istioctl" istioctl version --remote=false
+check "kind" kind version
+check "kubebuilder" kubebuilder version
+check "kubectl" kubectl version --client=true --output=json
+check "pulumi" pulumi version
+check "rad" rad version
+check "slight" slight --version
+check "spin" spin --version
+check "tofu" tofu version
+check "wasmtime" wasmtime --version
+check "zig" zig version
 
 # Report result
 reportResults
