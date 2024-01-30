@@ -1,0 +1,21 @@
+{
+    "id": "bicep",
+    "version": "1.0.0",
+    "name": "Bicep CLI",
+    "description": "Command line tool (bicep)",
+    "documentationURL": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of bicep",
+            "default": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-bicep"
+            ]
+        }
+    }
+}

@@ -7,6 +7,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "version" argocd version --client --output json
+check "version" bicep --version
 check "version" wit-bindgen --version
 check "version" calicoctl version
 check "version" cilium version --client
