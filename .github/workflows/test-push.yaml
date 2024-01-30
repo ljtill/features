@@ -13,6 +13,7 @@ jobs:
       matrix:
         features:
           - argocd
+          - bicep
           - bindgen
           - calicoctl
           - cilium
