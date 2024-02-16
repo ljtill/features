@@ -19,6 +19,7 @@
             "slight": {},
             "spin": {},
             "tofu": {},
+            "wasm-tools": {},
             "wasmtime": {},
             "wit-bindgen": {},
             "zig": {}
