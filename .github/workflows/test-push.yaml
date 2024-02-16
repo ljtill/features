@@ -31,6 +31,7 @@ jobs:
           - spin
           - tofu
           - wasmtime
+          - wit-bindgen
           - zig
     steps:
       - uses: actions/checkout@v4

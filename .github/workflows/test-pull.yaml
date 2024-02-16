@@ -15,7 +15,6 @@ jobs:
           filters: |
             argocd: ./**/argocd/**
             bicep: ./**/bicep/**
-            bindgen: ./**/bindgen/**
             calicoctl: ./**/calicoctl/**
             cilium: ./**/cilium/**
             clusterctl: ./**/clusterctl/**
@@ -32,6 +31,7 @@ jobs:
             spin: ./**/spin/**
             tofu: ./**/tofu/**
             wasmtime: ./**/wasmtime/**
+            wit-bindgen: ./**/wit-bindgen/**
             zig: ./**/zig/**
 
   test-features:
