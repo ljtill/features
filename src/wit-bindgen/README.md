@@ -1,5 +1,5 @@
 
-# WIT Bindgen CLI (bindgen)
+# WIT Bindgen CLI (wit-bindgen)
 
 Command line tool (wit-bindgen)
 
@@ -7,7 +7,7 @@ Command line tool (wit-bindgen)
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/bindgen:1": {}
+    "ghcr.io/ljtill/features/wit-bindgen:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Command line tool (wit-bindgen)
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/bindgen/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/wit-bindgen/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
