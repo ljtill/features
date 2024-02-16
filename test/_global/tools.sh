@@ -8,7 +8,6 @@ source dev-container-features-test-lib
 # Feature-specific tests
 check "argocd" argocd version --client --output json
 check "bicep" bicep --version
-check "bindgen" wit-bindgen --version
 check "calicoctl" calicoctl version
 check "cilium" cilium version --client
 check "clusterctl" clusterctl version
@@ -25,6 +24,7 @@ check "slight" slight --version
 check "spin" spin --version
 check "tofu" tofu version
 check "wasmtime" wasmtime --version
+check "wit-bindgen" wit-bindgen --version
 check "zig" zig version
 
 # Report result

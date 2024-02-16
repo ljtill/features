@@ -14,7 +14,6 @@ jobs:
         features:
           - argocd
           - bicep
-          - bindgen
           - calicoctl
           - cilium
           - clusterctl
@@ -31,6 +30,7 @@ jobs:
           - spin
           - tofu
           - wasmtime
+          - wit-bindgen
           - zig
     steps:
       - uses: actions/checkout@v4
