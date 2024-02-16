@@ -23,6 +23,7 @@ check "rad" rad version
 check "slight" slight --version
 check "spin" spin --version
 check "tofu" tofu version
+check "wasm-tools" wasm-tools --version
 check "wasmtime" wasmtime --version
 check "wit-bindgen" wit-bindgen --version
 check "zig" zig version
