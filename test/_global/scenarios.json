@@ -4,7 +4,6 @@
         "features": {
             "argocd": {},
             "bicep": {},
-            "bindgen": {},
             "calicoctl": {},
             "cilium": {},
             "clusterctl": {},
@@ -21,6 +20,7 @@
             "spin": {},
             "tofu": {},
             "wasmtime": {},
+            "wit-bindgen": {},
             "zig": {}
         }
     }
