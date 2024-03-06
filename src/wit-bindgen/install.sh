@@ -19,14 +19,14 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wit-bindgen/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4)
+        export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wit-bindgen/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4 | sed 's/v//')
     else
-        export VERSION=$(echo ${VERSION})
+        export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -Lo ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wit-bindgen/releases/download/wit-bindgen-cli-"${VERSION}"/wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz
+    curl -Lo ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz
 }
 
 install() {
