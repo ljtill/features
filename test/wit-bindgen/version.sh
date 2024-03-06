@@ -9,7 +9,7 @@ source dev-container-features-test-lib
 check "vscode" whoami | grep vscode
 
 # Options-specific tests
-check "version" wit-bindgen --version | grep "0.16.0"
+check "version" wit-bindgen --version | grep "0.21.0"
 
 # Report result
 reportResults
