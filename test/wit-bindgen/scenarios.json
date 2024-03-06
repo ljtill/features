@@ -4,7 +4,7 @@
         "user": "vscode",
         "features": {
             "wit-bindgen": {
-                "version": "0.16.0"
+                "version": "0.21.0"
             }
         }
     }
