@@ -31,8 +31,8 @@ download() {
 
 install() {
     tar -zxof ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz
-    chmod +x ./wit-bindgen-v"${VERSION}"-x86_64-linux/wit-bindgen
-    chown root:root ./wit-bindgen-v"${VERSION}"-x86_64-linux/wit-bindgen
+    chmod +x ./wit-bindgen-"${VERSION}"-x86_64-linux/wit-bindgen
+    chown root:root ./wit-bindgen-"${VERSION}"-x86_64-linux/wit-bindgen
     mv ./wit-bindgen-v"${VERSION}"-x86_64-linux/wit-bindgen /usr/local/bin/wit-bindgen
 }
 
