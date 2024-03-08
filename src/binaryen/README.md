@@ -1,5 +1,5 @@
 
-# Calico (binaryen)
+# Binaryen (binaryen)
 
 Command line tool (binaryen)
 
