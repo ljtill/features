@@ -29,6 +29,7 @@ jobs:
             pulumi: ./**/pulumi/**
             rad: ./**/rad/**
             spin: ./**/spin/**
+            wabt: ./**/wabt/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**
