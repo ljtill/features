@@ -18,6 +18,7 @@
             "pulumi": {},
             "rad": {},
             "spin": {},
+            "wabt": {},
             "wasm-tools": {},
             "wasmtime": {},
             "wit-bindgen": {},
