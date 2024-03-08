@@ -17,7 +17,6 @@
             "kubectl": {},
             "pulumi": {},
             "rad": {},
-            "slight": {},
             "spin": {},
             "wasm-tools": {},
             "wasmtime": {},

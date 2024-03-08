@@ -21,7 +21,6 @@ check "kubebuilder" kubebuilder version
 check "kubectl" kubectl version --client=true --output=json
 check "pulumi" pulumi version
 check "rad" rad version
-check "slight" slight --version
 check "spin" spin --version
 check "wasm-tools" wasm-tools --version
 check "wasmtime" wasmtime --version
