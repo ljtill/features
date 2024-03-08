@@ -28,7 +28,6 @@ jobs:
             kubectl: ./**/kubectl/**
             pulumi: ./**/pulumi/**
             rad: ./**/rad/**
-            slight: ./**/slight/**
             spin: ./**/spin/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
