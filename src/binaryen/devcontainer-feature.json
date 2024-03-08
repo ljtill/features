@@ -1,7 +1,7 @@
 {
     "id": "binaryen",
-    "version": "1.0.0",
-    "name": "Calico",
+    "version": "1.0.1",
+    "name": "Binaryen",
     "description": "Command line tool (binaryen)",
     "documentationURL": "https://github.com/WebAssembly/binaryen",
     "options": {
