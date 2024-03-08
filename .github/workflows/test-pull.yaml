@@ -30,7 +30,6 @@ jobs:
             rad: ./**/rad/**
             slight: ./**/slight/**
             spin: ./**/spin/**
-            tofu: ./**/tofu/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**
