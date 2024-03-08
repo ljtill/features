@@ -4,6 +4,7 @@
         "features": {
             "argocd": {},
             "bicep": {},
+            "binaryen": {},
             "calicoctl": {},
             "cilium": {},
             "clusterctl": {},

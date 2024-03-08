@@ -15,6 +15,7 @@ jobs:
           filters: |
             argocd: ./**/argocd/**
             bicep: ./**/bicep/**
+            binaryen: ./**/binaryen/**
             calicoctl: ./**/calicoctl/**
             cilium: ./**/cilium/**
             clusterctl: ./**/clusterctl/**
