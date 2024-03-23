@@ -32,6 +32,7 @@ jobs:
           - wasm-tools
           - wasmtime
           - wit-bindgen
+          - wit-deps
           - zig
     steps:
       - uses: actions/checkout@v4

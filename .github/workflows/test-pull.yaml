@@ -33,6 +33,7 @@ jobs:
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**
+            wit-deps: ./**/wit-deps/**
             zig: ./**/zig/**
 
   test-features:

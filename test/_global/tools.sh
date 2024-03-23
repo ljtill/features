@@ -26,6 +26,7 @@ check "wabt" wasm2c --version
 check "wasm-tools" wasm-tools --version
 check "wasmtime" wasmtime --version
 check "wit-bindgen" wit-bindgen --version
+check "wit-deps" wit-deps --version
 check "zig" zig version
 
 # Report result
