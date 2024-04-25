@@ -25,6 +25,7 @@ jobs:
           - kind
           - kubebuilder
           - kubectl
+          - pavex
           - pulumi
           - rad
           - spin
