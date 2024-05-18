@@ -12,6 +12,7 @@ check "binaryen" wasm2js --version
 check "calicoctl" calicoctl version
 check "cilium" cilium version --client
 check "clusterctl" clusterctl version
+check "deno" deno --version
 check "flux" flux version --client --output json
 check "func" func version
 check "helm" helm version

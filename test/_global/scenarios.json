@@ -8,6 +8,7 @@
             "calicoctl": {},
             "cilium": {},
             "clusterctl": {},
+            "deno": {},
             "flux": {},
             "func": {},
             "helm": {},
