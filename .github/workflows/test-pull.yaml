@@ -19,6 +19,7 @@ jobs:
             calicoctl: ./**/calicoctl/**
             cilium: ./**/cilium/**
             clusterctl: ./**/clusterctl/**
+            deno: ./**/deno/**
             flux: ./**/flux/**
             func: ./**/func/**
             helm: ./**/helm/**
