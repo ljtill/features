@@ -33,7 +33,7 @@ install() {
     unzip ./deno-x86_64-unknown-linux-gnu.zip
     chmod +x ./deno
     chown root:root ./deno
-    mv ./bicep /usr/local/bin/deno
+    mv ./deno /usr/local/bin/deno
 }
 
 echo "Activating feature 'deno'"
