@@ -1,13 +1,13 @@
 
-# Bicep CLI (bicep)
+# Deno CLI (deno)
 
-Command line tool (bicep)
+Command line tool (deno)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/bicep:1": {}
+    "ghcr.io/ljtill/features/deno:1": {}
 }
 ```
 
@@ -15,16 +15,16 @@ Command line tool (bicep)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of bicep | string | latest |
+| version | Select version of deno | string | latest |
 
 ## Customizations
 
 ### VS Code Extensions
 
-- `ms-azuretools.vscode-bicep`
+- `denoland.vscode-deno`
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/bicep/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/deno/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
