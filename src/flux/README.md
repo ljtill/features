@@ -17,12 +17,6 @@ Command line tool (flux)
 |-----|-----|-----|-----|
 | version | Select version of flux | string | latest |
 
-## Customizations
-
-### VS Code Extensions
-
-- `weaveworks.vscode-gitops-tools`
-
 
 
 ---
