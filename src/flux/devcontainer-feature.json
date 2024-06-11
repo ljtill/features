@@ -1,6 +1,6 @@
 {
     "id": "flux",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "name": "Flux",
     "description": "Command line tool (flux)",
     "documentationURL": "https://fluxcd.io/flux",
@@ -11,11 +11,5 @@
             "default": "latest"
         }
     },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "weaveworks.vscode-gitops-tools"
-            ]
-        }
-    }
+    "customizations": {}
 }
