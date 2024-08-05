@@ -44,38 +44,6 @@ install() {
 }
 
 options() {
-    if [ "${KREW}" = "true" ]; then
-        curl -sLf -o ./krew-linux_amd64.tar.gz https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz
-        if [ $? -ne 0 ]; then
-            echo "File download failed"
-            exit 1
-        fi
-
-        tar -zxof ./krew-linux_amd64.tar.gz
-        ./krew-linux_amd64 install krew
-        chmod -R +rx /usr/local/krew/store/krew
-    fi
-
-    if [ "${KUBECTX}" = "true" ]; then
-        curl -sLf -o ./kubectx https://github.com/ahmetb/kubectx/releases/latest/download/kubectx
-        if [ $? -ne 0 ]; then
-            echo "File download failed"
-            exit 1
-        fi
-
-        curl -sLf -o ./kubens https://github.com/ahmetb/kubectx/releases/latest/download/kubens
-        if [ $? -ne 0 ]; then
-            echo "File download failed"
-            exit 1
-        fi
-
-        chmod +x ./kubectx
-        chmod +x ./kubens
-        chown root:root ./kubectx
-        chown root:root ./kubens
-        mv ./kubectx /usr/local/bin/kubectx
-        mv ./kubens /usr/local/bin/kubens
-    fi
     if [ "${KUBELOGIN}" = "true" ]; then
         curl -sLf -o ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
         if [ $? -ne 0 ]; then
@@ -87,17 +55,6 @@ options() {
         chmod +x ./bin/linux_amd64/kubelogin
         chown root:root ./bin/linux_amd64/kubelogin
         mv ./bin/linux_amd64/kubelogin /usr/local/bin/kubelogin
-    fi
-    if [ "${NODESHELL}" = "true" ]; then
-        curl -sLf -o ./kubectl-node_shell https://github.com/kvaps/kubectl-node-shell/raw/master/kubectl-node_shell
-        if [ $? -ne 0 ]; then
-            echo "File download failed"
-            exit 1
-        fi
-
-        chmod +x ./kubectl-node_shell
-        chown root:root ./kubectl-node_shell
-        mv ./kubectl-node_shell /usr/local/bin/kubectl-node_shell
     fi
 }
 

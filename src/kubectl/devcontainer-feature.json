@@ -1,6 +1,6 @@
 {
     "id": "kubectl",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "name": "Kubernetes CLI",
     "description": "Command line tool (kubectl)",
     "documentationURL": "https://kubernetes.io/docs/reference/kubectl",
@@ -10,25 +10,10 @@
             "description": "Select version of kubectl",
             "default": "latest"
         },
-        "krew": {
-            "type": "boolean",
-            "description": "Optionally install krew (https://github.com/kubernetes-sigs/krew)",
-            "default": false
-        },
-        "kubectx": {
-            "type": "boolean",
-            "description": "Optionally install kubectx (https://github.com/ahmetb/kubectx)",
-            "default": false
-        },
         "kubelogin": {
             "type": "boolean",
             "description": "Optionally install kubelogin (https://aka.ms/aks/kubelogin)",
-            "default": false
-        },
-        "nodeshell": {
-            "type": "boolean",
-            "description": "Optionally install node-shell (https://github.com/kvaps/kubectl-node-shell)",
-            "default": false
+            "default": true
         }
     },
     "customizations": {
@@ -37,9 +22,5 @@
                 "ms-kubernetes-tools.vscode-kubernetes-tools"
             ]
         }
-    },
-    "containerEnv": {
-        "KREW_ROOT": "/usr/local/krew",
-        "PATH": "${KREW_ROOT}/bin:${PATH}"
     }
 }
