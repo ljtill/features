@@ -65,7 +65,7 @@ download() {
     URL="https://github.com/argoproj/argo-cd/releases/download/v${VERSION}/argocd-${PLATFORM}-${ARCHITECTURE}"
     echo "URL: $URL"
     
-    if curl -L -f -o "$TEMP_FILE" "$URL"; then
+    if curl -s -L -f -o "$TEMP_FILE" "$URL"; then
         mv "$TEMP_FILE" ./argocd || { echo "Failed to move file"; exit 1; }
     else
         echo "File download failed"
