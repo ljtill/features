@@ -19,9 +19,13 @@ check curl ca-certificates jq git
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://dl.k8s.io/release/stable.txt | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        RESPONSE=$(curl -sL -w "%{http_code}" https://dl.k8s.io/release/stable.txt | sed 's/v//')
+        HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+        
+        if [ "$HTTP_STATUS" -eq 200 ]; then
+            export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name")
+        else
+            echo "Failed to fetch the latest version."
             exit 1
         fi
     else
@@ -30,9 +34,11 @@ version() {
 }
 
 download() {
-    curl -Lo ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    RESPONSE=$(curl -sL -w "%{http_code}" -o ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl)
+    HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+
+    if [ "$HTTP_STATUS" -ne 200 ]; then
+        echo "Failed to download file"
         exit 1
     fi
 }

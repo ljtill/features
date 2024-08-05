@@ -1,6 +1,6 @@
 {
     "id": "rad",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "Radius",
     "description": "Command line tool (rad)",
     "documentationURL": "https://docs.radapp.io/",

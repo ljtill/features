@@ -19,9 +19,13 @@ check curl ca-certificates jq xz-utils
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        RESPONSE=$(curl -sL -w "%{http_code}" https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | sed 's/v//')
+        HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+        
+        if [ "$HTTP_STATUS" -eq 200 ]; then
+            export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name")
+        else
+            echo "Failed to fetch the latest version."
             exit 1
         fi
     else
@@ -30,9 +34,11 @@ version() {
 }
 
 download() {
-    curl -Lo ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    RESPONSE=$(curl -sL -w "%{http_code}" -o ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz)
+    HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+
+    if [ "$HTTP_STATUS" -ne 200 ]; then
+        echo "Failed to download file"
         exit 1
     fi
 }
