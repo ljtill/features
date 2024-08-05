@@ -59,7 +59,7 @@ version() {
 download() {
     echo "Downloading binary..."
     curl -Lf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}"
-    if [ $? -ne 0 ]; then
+    if [ ! -f ./argocd ]; then
         echo "File download failed"
         exit 1
     fi
