@@ -20,6 +20,10 @@ check curl ca-certificates jq
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/kubernetes-sigs/cluster-api/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        if [ $? -ne 0 ]; then
+            echo "Version check failed"
+            exit 1
+        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
@@ -27,6 +31,10 @@ version() {
 
 download() {
     curl -Lo ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/download/v"${VERSION}"/clusterctl-linux-amd64
+    if [ $? -ne 0 ]; then
+        echo "File download failed"
+        exit 1
+    fi
 }
 
 install() {

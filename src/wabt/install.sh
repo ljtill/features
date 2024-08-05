@@ -20,6 +20,10 @@ check curl ca-certificates jq
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/WebAssembly/wabt/releases/latest | jq -r ".tag_name")
+        if [ $? -ne 0 ]; then
+            echo "Version check failed"
+            exit 1
+        fi
     else
         export VERSION=$(echo ${VERSION})
     fi
@@ -27,6 +31,10 @@ version() {
 
 download() {
     curl -Lo ./wabt-"${VERSION}"-ubuntu.tar.gz https://github.com/WebAssembly/wabt/releases/download/"${VERSION}"/wabt-"${VERSION}"-ubuntu.tar.gz
+    if [ $? -ne 0 ]; then
+        echo "File download failed"
+        exit 1
+    fi
 }
 
 install() {

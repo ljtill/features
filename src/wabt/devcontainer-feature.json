@@ -1,6 +1,6 @@
 {
     "id": "wabt",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "WABT",
     "description": "Command line tool (wabt)",
     "documentationURL": "https://github.com/WebAssembly/wabt",
