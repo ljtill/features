@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/latest/download/v"${VERSION}"/argocd-linux-amd64
+    curl -Lo ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1
