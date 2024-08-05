@@ -20,10 +20,6 @@ check curl ca-certificates jq xz-utils
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sLf https://api.github.com/repos/ziglang/zig/releases/latest | jq -r ".tag_name" | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
-            exit 1
-        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi

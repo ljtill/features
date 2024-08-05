@@ -20,10 +20,6 @@ check curl ca-certificates jq git
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sLf https://dl.k8s.io/release/stable.txt | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
-            exit 1
-        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
