@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/cilium/cilium-cli/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/cilium/cilium-cli/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./cilium-linux-amd64.tar.gz https://github.com/cilium/cilium-cli/releases/download/v"${VERSION}"/cilium-linux-amd64.tar.gz
+    curl -sLf -o ./cilium-linux-amd64.tar.gz https://github.com/cilium/cilium-cli/releases/download/v"${VERSION}"/cilium-linux-amd64.tar.gz
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

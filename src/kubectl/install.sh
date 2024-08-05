@@ -19,7 +19,7 @@ check curl ca-certificates jq git
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://dl.k8s.io/release/stable.txt | sed 's/v//')
+        export VERSION=$(curl -sLf https://dl.k8s.io/release/stable.txt | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl
+    curl -sLf -o ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1
@@ -45,7 +45,7 @@ install() {
 
 options() {
     if [ "${KREW}" = "true" ]; then
-        curl -Lo ./krew-linux_amd64.tar.gz https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz
+        curl -sLf -o ./krew-linux_amd64.tar.gz https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-linux_amd64.tar.gz
         if [ $? -ne 0 ]; then
             echo "File download failed"
             exit 1
@@ -57,13 +57,13 @@ options() {
     fi
 
     if [ "${KUBECTX}" = "true" ]; then
-        curl -Lo ./kubectx https://github.com/ahmetb/kubectx/releases/latest/download/kubectx
+        curl -sLf -o ./kubectx https://github.com/ahmetb/kubectx/releases/latest/download/kubectx
         if [ $? -ne 0 ]; then
             echo "File download failed"
             exit 1
         fi
 
-        curl -Lo ./kubens https://github.com/ahmetb/kubectx/releases/latest/download/kubens
+        curl -sLf -o ./kubens https://github.com/ahmetb/kubectx/releases/latest/download/kubens
         if [ $? -ne 0 ]; then
             echo "File download failed"
             exit 1
@@ -77,7 +77,7 @@ options() {
         mv ./kubens /usr/local/bin/kubens
     fi
     if [ "${KUBELOGIN}" = "true" ]; then
-        curl -Lo ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
+        curl -sLf -o ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
         if [ $? -ne 0 ]; then
             echo "File download failed"
             exit 1
@@ -89,7 +89,7 @@ options() {
         mv ./bin/linux_amd64/kubelogin /usr/local/bin/kubelogin
     fi
     if [ "${NODESHELL}" = "true" ]; then
-        curl -Lo ./kubectl-node_shell https://github.com/kvaps/kubectl-node-shell/raw/master/kubectl-node_shell
+        curl -sLf -o ./kubectl-node_shell https://github.com/kvaps/kubectl-node-shell/raw/master/kubectl-node_shell
         if [ $? -ne 0 ]; then
             echo "File download failed"
             exit 1

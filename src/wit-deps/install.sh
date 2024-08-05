@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wit-deps/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4 | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/bytecodealliance/wit-deps/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4 | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./wit-deps-x86_64-unknown-linux-musl https://github.com/bytecodealliance/wit-deps/releases/download/v"${VERSION}"/wit-deps-x86_64-unknown-linux-musl
+    curl -sLf -o ./wit-deps-x86_64-unknown-linux-musl https://github.com/bytecodealliance/wit-deps/releases/download/v"${VERSION}"/wit-deps-x86_64-unknown-linux-musl
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1
