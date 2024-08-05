@@ -18,17 +18,28 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates jq
 
 system() {
-    export ARCHITECTURE=$(uname -m | sed 's/aarch64/arm64/')
-    if [ "$ARCHITECTURE" != "amd64" ] && [ "$ARCHITECTURE" != "arm64" ]; then
-        echo "Unsupported architecture: $ARCHITECTURE"
-        exit 1
-    fi
+    local ARCHITECTURE=$(uname -m | tr '[:upper:]' '[:lower:]')
+    local PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
 
-    export PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
-    if [ "$PLATFORM" != "linux" ] && [ "$PLATFORM" != "darwin" ]; then
-        echo "Unsupported platform: $PLATFORM"
-        exit 1
-    fi
+    case "$ARCHITECTURE" in
+        x86_64) ARCHITECTURE="amd64" ;;
+        aarch64) ARCHITECTURE="arm64" ;;
+        *)
+            echo "Unsupported architecture: $ARCHITECTURE"
+            exit 1
+            ;;
+    esac
+
+    case "$PLATFORM" in
+        linux | darwin) ;;
+        *)
+            echo "Unsupported platform: $PLATFORM"
+            exit 1
+            ;;
+    esac
+
+    export $PLATFORM
+    export $ARCHITECTURE
 }
 
 version() {
