@@ -24,7 +24,6 @@ version() {
         
         if [ "$HTTP_STATUS" -eq 200 ]; then
             export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name" | sed 's/v//')
-
         else
             echo "Failed to fetch the latest version"
             exit 1
@@ -35,7 +34,7 @@ version() {
 }
 
 download() {
-    RESPONSE=$(curl -sL -w "%{http_code}" -o ./argocd https://github.com/argoproj/argo-cd/releases/download/"${VERSION}"/argocd-linux-amd64)
+    RESPONSE=$(curl -sL -w "%{http_code}" -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64)
     HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
 
     if [ "$HTTP_STATUS" -ne 200 ]; then

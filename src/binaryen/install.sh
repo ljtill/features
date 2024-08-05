@@ -23,19 +23,18 @@ version() {
         HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
         
         if [ "$HTTP_STATUS" -eq 200 ]; then
-            export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name" | sed 's/v//')
-
+            export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name" | sed 's/version_//')
         else
             echo "Failed to fetch the latest version."
             exit 1
         fi
     else
-        export VERSION=$(echo ${VERSION})
+        export VERSION=$(echo ${VERSION} | sed 's/version_//')
     fi
 }
 
 download() {
-    RESPONSE=$(curl -sL -w "%{http_code}" -o ./binaryen-"${VERSION}"-x86_64-linux.tar.gz https://github.com/WebAssembly/binaryen/releases/download/"${VERSION}"/binaryen-"${VERSION}"-x86_64-linux.tar.gz)
+    RESPONSE=$(curl -sL -w "%{http_code}" -o ./binaryen-version_"${VERSION}"-x86_64-linux.tar.gz https://github.com/WebAssembly/binaryen/releases/download/version_"${VERSION}"/binaryen-version_"${VERSION}"-x86_64-linux.tar.gz)
     HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
 
     if [ "$HTTP_STATUS" -ne 200 ]; then
