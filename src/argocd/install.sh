@@ -18,9 +18,8 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates jq
 
 system() {
-    echo "Checking system..."
-    local ARCHITECTURE=$(uname -m | tr '[:upper:]' '[:lower:]')
-    local PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
+    ARCHITECTURE=$(uname -m | tr '[:upper:]' '[:lower:]')
+    PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
 
     case "$ARCHITECTURE" in
         x86_64) ARCHITECTURE="amd64" ;;
@@ -44,7 +43,6 @@ system() {
 }
 
 version() {
-    echo "Retrieving version..."
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sLf https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
@@ -57,8 +55,6 @@ version() {
 }
 
 download() {
-    echo "Downloading binary..."
-    
     TEMP_FILE=$(mktemp) || { echo "Failed to create temp file"; exit 1; }
     trap 'rm -f "$TEMP_FILE"' EXIT
 
@@ -66,7 +62,7 @@ download() {
     echo "URL: $URL"
     
     if curl -s -L -f -o "$TEMP_FILE" "$URL"; then
-        mv "$TEMP_FILE" ./argocd || { echo "Failed to move file"; exit 1; }
+        mv "$TEMP_FILE" ./argocd || { echo "File rename failed"; exit 1; }
     else
         echo "File download failed"
         exit 1
@@ -74,7 +70,6 @@ download() {
 }
 
 install() {
-    echo "Installing binary..."
     chmod +x ./argocd
     chown root:root ./argocd
     mv ./argocd /usr/local/bin/argocd
