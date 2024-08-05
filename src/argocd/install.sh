@@ -17,6 +17,20 @@ export DEBIAN_FRONTEND=noninteractive
 
 check curl ca-certificates jq
 
+system() {
+    export ARCHITECTURE=$(uname -m | sed 's/aarch64/arm64/')
+    if [ "$ARCHITECTURE" != "amd64" ] && [ "$ARCHITECTURE" != "arm64" ]; then
+        echo "Unsupported architecture: $ARCHITECTURE"
+        exit 1
+    fi
+
+    export PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
+    if [ "$PLATFORM" != "linux" ] && [ "$PLATFORM" != "darwin" ]; then
+        echo "Unsupported platform: $PLATFORM"
+        exit 1
+    fi
+}
+
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sLf https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
@@ -30,7 +44,7 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64
+    curl -sLf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}"
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1
@@ -45,6 +59,7 @@ install() {
 
 echo "Activating feature 'argocd'"
 
+system
 version
 download
 install
