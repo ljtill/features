@@ -19,11 +19,12 @@ check curl ca-certificates jq git
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        RESPONSE=$(curl -sL -w "%{http_code}" https://dl.k8s.io/release/stable.txt | sed 's/v//')
+        RESPONSE=$(curl -sL -w "%{http_code}" https://dl.k8s.io/release/stable.txt)
         HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
         
         if [ "$HTTP_STATUS" -eq 200 ]; then
-            export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name")
+            export VERSION=$(echo "$RESPONSE" | sed '$d' | jq -r ".tag_name" | sed 's/v//')
+
         else
             echo "Failed to fetch the latest version."
             exit 1
