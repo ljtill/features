@@ -18,6 +18,7 @@ export DEBIAN_FRONTEND=noninteractive
 check curl ca-certificates jq
 
 system() {
+    echo "Checking system..."
     local ARCHITECTURE=$(uname -m | tr '[:upper:]' '[:lower:]')
     local PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
 
@@ -43,6 +44,7 @@ system() {
 }
 
 version() {
+    echo "Retrieving version..."
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sLf https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
@@ -55,6 +57,7 @@ version() {
 }
 
 download() {
+    echo "Downloading binary..."
     curl -Lf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}"
     if [ $? -ne 0 ]; then
         echo "File download failed"
@@ -63,6 +66,7 @@ download() {
 }
 
 install() {
+    echo "Installing binary..."
     chmod +x ./argocd
     chown root:root ./argocd
     mv ./argocd /usr/local/bin/argocd
