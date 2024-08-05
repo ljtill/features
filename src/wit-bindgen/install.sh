@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wit-bindgen/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4 | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/bytecodealliance/wit-bindgen/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4 | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz
+    curl -sLf -o ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

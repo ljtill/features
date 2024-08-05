@@ -19,7 +19,7 @@ check curl ca-certificates jq unzip
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/denoland/deno/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/denoland/deno/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./deno-x86_64-unknown-linux-gnu.zip https://github.com/denoland/deno/releases/download/v"${VERSION}"/deno-x86_64-unknown-linux-gnu.zip
+    curl -sLf -o ./deno-x86_64-unknown-linux-gnu.zip https://github.com/denoland/deno/releases/download/v"${VERSION}"/deno-x86_64-unknown-linux-gnu.zip
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

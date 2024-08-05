@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/helm/helm/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/helm/helm/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"${VERSION}"-linux-amd64.tar.gz
+    curl -sLf -o ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"${VERSION}"-linux-amd64.tar.gz
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

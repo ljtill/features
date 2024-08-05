@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/radius-project/radius/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/radius-project/radius/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./rad https://github.com/radius-project/radius/releases/download/v"${VERSION}"/rad_linux_amd64
+    curl -sLf -o ./rad https://github.com/radius-project/radius/releases/download/v"${VERSION}"/rad_linux_amd64
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

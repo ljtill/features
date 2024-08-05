@@ -19,7 +19,7 @@ check curl ca-certificates jq xz-utils
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/bytecodealliance/wasmtime/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz
+    curl -sLf -o ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

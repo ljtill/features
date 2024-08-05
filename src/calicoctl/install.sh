@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/projectcalico/calico/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(curl -sLf https://api.github.com/repos/projectcalico/calico/releases/latest | jq -r ".tag_name" | sed 's/v//')
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./calicoctl https://github.com/projectcalico/calico/releases/download/v"${VERSION}"/calicoctl-linux-amd64
+    curl -sLf -o ./calicoctl https://github.com/projectcalico/calico/releases/download/v"${VERSION}"/calicoctl-linux-amd64
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1

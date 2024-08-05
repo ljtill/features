@@ -19,7 +19,7 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sL https://api.github.com/repos/WebAssembly/binaryen/releases/latest | jq -r ".tag_name")
+        export VERSION=$(curl -sLf https://api.github.com/repos/WebAssembly/binaryen/releases/latest | jq -r ".tag_name")
         if [ $? -ne 0 ]; then
             echo "Version check failed"
             exit 1
@@ -30,7 +30,7 @@ version() {
 }
 
 download() {
-    curl -Lo ./binaryen-"${VERSION}"-x86_64-linux.tar.gz https://github.com/WebAssembly/binaryen/releases/download/"${VERSION}"/binaryen-"${VERSION}"-x86_64-linux.tar.gz
+    curl -sLf -o ./binaryen-"${VERSION}"-x86_64-linux.tar.gz https://github.com/WebAssembly/binaryen/releases/download/"${VERSION}"/binaryen-"${VERSION}"-x86_64-linux.tar.gz
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1
