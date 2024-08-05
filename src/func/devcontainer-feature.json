@@ -1,6 +1,6 @@
 {
     "id": "func",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Azure Functions Core Tools",
     "description": "Command line tool (func)",
     "documentationURL": "https://learn.microsoft.com/azure/azure-functions/functions-run-local",

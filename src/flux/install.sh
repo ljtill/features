@@ -20,6 +20,10 @@ check curl ca-certificates jq
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        if [ $? -ne 0 ]; then
+            echo "Version check failed"
+            exit 1
+        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
@@ -27,6 +31,10 @@ version() {
 
 download() {
     curl -Lo ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"${VERSION}"/flux_"${VERSION}"_linux_amd64.tar.gz
+    if [ $? -ne 0 ]; then
+        echo "File download failed"
+        exit 1
+    fi
 }
 
 install() {
