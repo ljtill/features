@@ -1,6 +1,6 @@
 {
     "id": "zig",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Zig CLI",
     "description": "Command line tool (zig)",
     "documentationURL": "https://ziglang.org/learn",

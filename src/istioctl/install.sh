@@ -20,6 +20,10 @@ check curl ca-certificates jq
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/istio/istio/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        if [ $? -ne 0 ]; then
+            echo "Version check failed"
+            exit 1
+        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
@@ -27,6 +31,10 @@ version() {
 
 download() {
     curl -Lo ./istioctl-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/"${VERSION}"/istioctl-"${VERSION}"-linux-amd64.tar.gz
+    if [ $? -ne 0 ]; then
+        echo "File download failed"
+        exit 1
+    fi
 }
 
 install() {

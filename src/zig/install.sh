@@ -20,6 +20,10 @@ check curl ca-certificates jq xz-utils
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sL https://api.github.com/repos/ziglang/zig/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        if [ $? -ne 0 ]; then
+            echo "Version check failed"
+            exit 1
+        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
@@ -27,6 +31,10 @@ version() {
 
 download() {
     curl -Lo ./zig-linux-x86_64-"${VERSION}".tar.xz https://ziglang.org/download/"${VERSION}"/zig-linux-x86_64-"${VERSION}".tar.xz
+    if [ $? -ne 0 ]; then
+        echo "File download failed"
+        exit 1
+    fi
 }
 
 install() {

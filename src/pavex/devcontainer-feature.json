@@ -1,6 +1,6 @@
 {
     "id": "pavex",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Pavex",
     "description": "Command line tool (pavex)",
     "documentationURL": "https://pavex.dev/docs",

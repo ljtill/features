@@ -1,6 +1,6 @@
 {
     "id": "kind",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "name": "Kubernetes in Docker CLI",
     "description": "Command line tool (kind)",
     "documentationURL": "https://kind.sigs.k8s.io",
