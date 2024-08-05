@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./istioctl-linux-amd64.tar.gz https://github.com/istio/istio/releases/download/"${VERSION}"/istioctl-"${VERSION}"-linux-amd64.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/istio/istio/releases/download/"${VERSION}"/istioctl-"${VERSION}"-linux-amd64.tar.gz"
+    if ! curl -sLf -o ./istioctl-linux-amd64.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

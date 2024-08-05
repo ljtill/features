@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./clusterctl https://github.com/kubernetes-sigs/cluster-api/releases/download/v"${VERSION}"/clusterctl-linux-amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/kubernetes-sigs/cluster-api/releases/download/v"${VERSION}"/clusterctl-linux-amd64"
+    if ! curl -sLf -o ./clusterctl "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

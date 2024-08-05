@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./pavex_cli-x86_64-unknown-linux-gnu.tar.xz https://github.com/LukeMathWalker/pavex/releases/download/"${VERSION}"/pavex_cli-x86_64-unknown-linux-gnu.tar.xz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/LukeMathWalker/pavex/releases/download/"${VERSION}"/pavex_cli-x86_64-unknown-linux-gnu.tar.xz"
+    if ! curl -sLf -o ./pavex_cli-x86_64-unknown-linux-gnu.tar.xz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

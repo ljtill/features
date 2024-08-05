@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./pulumi-linux-x64.tar.gz https://get.pulumi.com/releases/sdk/pulumi-v"${VERSION}"-linux-x64.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://get.pulumi.com/releases/sdk/pulumi-v"${VERSION}"-linux-x64.tar.gz"
+    if ! curl -sLf -o ./pulumi-linux-x64.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

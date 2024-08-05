@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./kind https://github.com/kubernetes-sigs/kind/releases/download/v"${VERSION}"/kind-linux-amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/kubernetes-sigs/kind/releases/download/v"${VERSION}"/kind-linux-amd64"
+    if ! curl -sLf -o ./kind "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

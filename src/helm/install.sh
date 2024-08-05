@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./helm-linux-amd64.tar.gz https://get.helm.sh/helm-v"${VERSION}"-linux-amd64.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://get.helm.sh/helm-v"${VERSION}"-linux-amd64.tar.gz"
+    if ! curl -sLf -o ./helm-linux-amd64.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

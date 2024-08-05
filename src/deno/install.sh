@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./deno-x86_64-unknown-linux-gnu.zip https://github.com/denoland/deno/releases/download/v"${VERSION}"/deno-x86_64-unknown-linux-gnu.zip
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/denoland/deno/releases/download/v"${VERSION}"/deno-x86_64-unknown-linux-gnu.zip"
+    if ! curl -sLf -o ./deno-x86_64-unknown-linux-gnu.zip "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

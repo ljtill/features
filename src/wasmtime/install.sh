@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/bytecodealliance/wasmtime/releases/download/v"${VERSION}"/wasmtime-v"${VERSION}"-x86_64-linux.tar.xz"
+    if ! curl -sLf -o ./wasmtime-v"${VERSION}"-x86_64-linux.tar.xz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

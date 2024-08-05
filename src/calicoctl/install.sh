@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./calicoctl https://github.com/projectcalico/calico/releases/download/v"${VERSION}"/calicoctl-linux-amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/projectcalico/calico/releases/download/v"${VERSION}"/calicoctl-linux-amd64"
+    if ! curl -sLf -o ./calicoctl "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

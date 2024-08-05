@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./cilium-linux-amd64.tar.gz https://github.com/cilium/cilium-cli/releases/download/v"${VERSION}"/cilium-linux-amd64.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/cilium/cilium-cli/releases/download/v"${VERSION}"/cilium-linux-amd64.tar.gz"
+    if ! curl -sLf -o ./cilium-linux-amd64.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

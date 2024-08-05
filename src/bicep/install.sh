@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./bicep https://github.com/azure/bicep/releases/download/v"${VERSION}"/bicep-linux-x64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/azure/bicep/releases/download/v"${VERSION}"/bicep-linux-x64"
+    if ! curl -sLf -o ./bicep "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

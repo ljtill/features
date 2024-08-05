@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./wit-deps-x86_64-unknown-linux-musl https://github.com/bytecodealliance/wit-deps/releases/download/v"${VERSION}"/wit-deps-x86_64-unknown-linux-musl
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/bytecodealliance/wit-deps/releases/download/v"${VERSION}"/wit-deps-x86_64-unknown-linux-musl"
+    if ! curl -sLf -o ./wit-deps-x86_64-unknown-linux-musl "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

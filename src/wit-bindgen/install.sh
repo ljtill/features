@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz"
+    if ! curl -sLf -o ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

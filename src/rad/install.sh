@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./rad https://github.com/radius-project/radius/releases/download/v"${VERSION}"/rad_linux_amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/radius-project/radius/releases/download/v"${VERSION}"/rad_linux_amd64"
+    if ! curl -sLf -o ./rad "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

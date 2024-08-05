@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl"
+    if ! curl -sLf -o ./kubectl "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }
@@ -45,9 +45,9 @@ install() {
 
 options() {
     if [ "${KUBELOGIN}" = "true" ]; then
-        curl -sLf -o ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
-        if [ $? -ne 0 ]; then
-            echo "File download failed"
+        URL="https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip"
+        if ! curl -sLf -o ./kubelogin-linux-amd64.zip "$URL"; then
+            echo "ERROR: Download failed"
             exit 1
         fi
         

@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./Azure.Functions.Cli.linux-x64.zip https://github.com/azure/azure-functions-core-tools/releases/download/"${VERSION}"/Azure.Functions.Cli.linux-x64."${VERSION}".zip
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/azure/azure-functions-core-tools/releases/download/"${VERSION}"/Azure.Functions.Cli.linux-x64."${VERSION}".zip"
+    if ! curl -sLf -o ./Azure.Functions.Cli.linux-x64.zip "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

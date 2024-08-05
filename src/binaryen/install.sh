@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./binaryen-"${VERSION}"-x86_64-linux.tar.gz https://github.com/WebAssembly/binaryen/releases/download/"${VERSION}"/binaryen-"${VERSION}"-x86_64-linux.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/WebAssembly/binaryen/releases/download/"${VERSION}"/binaryen-"${VERSION}"-x86_64-linux.tar.gz"
+    if ! curl -sLf -o ./binaryen-"${VERSION}"-x86_64-linux.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

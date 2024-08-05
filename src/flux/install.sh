@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./flux_linux_amd64.tar.gz https://github.com/fluxcd/flux2/releases/download/v"${VERSION}"/flux_"${VERSION}"_linux_amd64.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/fluxcd/flux2/releases/download/v"${VERSION}"/flux_"${VERSION}"_linux_amd64.tar.gz"
+    if ! curl -sLf -o ./flux_linux_amd64.tar.gz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

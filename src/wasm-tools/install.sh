@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./wasm-tools-"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wasm-tools/releases/download/v"${VERSION}"/wasm-tools-"${VERSION}"-x86_64-linux.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/bytecodealliance/wasm-tools/releases/download/v"${VERSION}"/wasm-tools-"${VERSION}"-x86_64-linux.tar.gz"
+    if ! curl -sLf -o ./wasm-tools-"${VERSION}"-x86_64-linux.tar.gz  "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

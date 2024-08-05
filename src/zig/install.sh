@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./zig-linux-x86_64-"${VERSION}".tar.xz https://ziglang.org/download/"${VERSION}"/zig-linux-x86_64-"${VERSION}".tar.xz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://ziglang.org/download/"${VERSION}"/zig-linux-x86_64-"${VERSION}".tar.xz"
+    if ! curl -sLf -o ./zig-linux-x86_64-"${VERSION}".tar.xz "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

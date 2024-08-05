@@ -20,19 +20,15 @@ check curl ca-certificates jq
 version() {
     if [ "${VERSION}" = "latest" ]; then
         export VERSION=$(curl -sLf https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
-            exit 1
-        fi
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -sLf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64"
+    if ! curl -sLf -o ./argocd "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

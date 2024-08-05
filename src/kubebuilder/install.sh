@@ -30,9 +30,9 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./kubebuilder https://github.com/kubernetes-sigs/kubebuilder/releases/download/v"${VERSION}"/kubebuilder_linux_amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/kubernetes-sigs/kubebuilder/releases/download/v"${VERSION}"/kubebuilder_linux_amd64"
+    if ! curl -sLf -o ./kubebuilder "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }
