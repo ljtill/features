@@ -40,16 +40,17 @@ jobs:
 
   test-features:
     needs: [detect-changes]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
       matrix:
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
         baseImage:
-          - mcr.microsoft.com/devcontainers/base:bullseye # Debian 11
-          - mcr.microsoft.com/devcontainers/base:bookworm # Debian 12
           - mcr.microsoft.com/devcontainers/base:jammy # Ubuntu 22.04
           - mcr.microsoft.com/devcontainers/base:noble # Ubuntu 24.04
+        os:
+          - ubuntu-latest
+          - macos-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -61,11 +62,14 @@ jobs:
 
   test-scenarios:
     needs: [detect-changes]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
       matrix:
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
+        os:
+          - ubuntu-latest
+          - macos-latest
     steps:
       - uses: actions/checkout@v4
 
