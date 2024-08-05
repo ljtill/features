@@ -58,10 +58,14 @@ version() {
 
 download() {
     echo "Downloading binary..."
-    STATUS=$(curl -L -w %{http_code} https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}" > ./argocd)
-    if [ "${STATUS}" -ne 200 ]; then
-        echo "File download failed"
-        exit 1
+    TEMP_FILE=$(mktemp)
+    STATUS=$(curl -L -w "%{http_code}" -o "$TEMP_FILE" https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}")
+
+    if [ "$STATUS" -eq 200 ]; then
+        mv "$TEMP_FILE" ./argocd
+    else
+        echo "Failed to download file. HTTP status code: $STATUS"
+        rm "$TEMP_FILE"
     fi
 }
 
