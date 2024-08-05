@@ -55,7 +55,7 @@ version() {
 }
 
 download() {
-    curl -sLf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}"
+    curl -Lf -o ./argocd https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-"${PLATFORM}"-"${ARCHITECTURE}"
     if [ $? -ne 0 ]; then
         echo "File download failed"
         exit 1
