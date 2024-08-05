@@ -16,10 +16,7 @@ Command line tool (kubectl)
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select version of kubectl | string | latest |
-| krew | Optionally install krew (https://github.com/kubernetes-sigs/krew) | boolean | false |
-| kubectx | Optionally install kubectx (https://github.com/ahmetb/kubectx) | boolean | false |
-| kubelogin | Optionally install kubelogin (https://aka.ms/aks/kubelogin) | boolean | false |
-| nodeshell | Optionally install node-shell (https://github.com/kvaps/kubectl-node-shell) | boolean | false |
+| kubelogin | Optionally install kubelogin (https://aka.ms/aks/kubelogin) | boolean | true |
 
 ## Customizations
 
