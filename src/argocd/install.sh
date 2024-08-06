@@ -19,7 +19,12 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://api.github.com/repos/argoproj/argo-cd/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        URL="https://api.github.com/repos/argoproj/argo-cd/releases/latest"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
+            exit 1
+        fi
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
