@@ -19,20 +19,21 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://api.github.com/repos/bytecodealliance/wit-bindgen/releases/latest | jq -r ".tag_name" | cut -d'-' -f 4 | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        URL="https://api.github.com/repos/bytecodealliance/wit-bindgen/releases/latest"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -sLf -o ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/bytecodealliance/wit-bindgen/releases/download/v"${VERSION}"/wit-bindgen-"${VERSION}"-x86_64-linux.tar.gz"
+    if ! curl -sLf -o ./wit-bindgen-v"${VERSION}"-x86_64-linux.tar.gz "$URL"; then
+        echo "ERROR: Unable to download file"
         exit 1
     fi
 }

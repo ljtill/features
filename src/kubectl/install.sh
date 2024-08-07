@@ -19,20 +19,21 @@ check curl ca-certificates jq git
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://dl.k8s.io/release/stable.txt | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        URL="https://dl.k8s.io/release/stable.txt"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
+        export VERSION=$(cat ./response.json | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -sLf -o ./kubectl https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://dl.k8s.io/release/v"${VERSION}"/bin/linux/amd64/kubectl"
+    if ! curl -sLf -o ./kubectl "$URL"; then
+        echo "ERROR: Unable to download file"
         exit 1
     fi
 }
@@ -45,9 +46,9 @@ install() {
 
 options() {
     if [ "${KUBELOGIN}" = "true" ]; then
-        curl -sLf -o ./kubelogin-linux-amd64.zip https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip
-        if [ $? -ne 0 ]; then
-            echo "File download failed"
+        URL="https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-amd64.zip"
+        if ! curl -sLf -o ./kubelogin-linux-amd64.zip "$URL"; then
+        echo "ERROR: Unable to download file"
             exit 1
         fi
         

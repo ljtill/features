@@ -19,20 +19,21 @@ check curl ca-certificates jq unzip
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://api.github.com/repos/azure/azure-functions-core-tools/releases/latest | jq -r ".tag_name" | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        URL="https://api.github.com/repos/azure/azure-functions-core-tools/releases/latest"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -sLf -o ./Azure.Functions.Cli.linux-x64.zip https://github.com/azure/azure-functions-core-tools/releases/download/"${VERSION}"/Azure.Functions.Cli.linux-x64."${VERSION}".zip
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/azure/azure-functions-core-tools/releases/download/"${VERSION}"/Azure.Functions.Cli.linux-x64."${VERSION}".zip"
+    if ! curl -sLf -o ./Azure.Functions.Cli.linux-x64.zip "$URL"; then
+        echo "ERROR: Download failed"
         exit 1
     fi
 }

@@ -19,20 +19,21 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://api.github.com/repos/radius-project/radius/releases/latest | jq -r ".tag_name" | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        URL="https://api.github.com/repos/radius-project/radius/releases/latest"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -sLf -o ./rad https://github.com/radius-project/radius/releases/download/v"${VERSION}"/rad_linux_amd64
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/radius-project/radius/releases/download/v"${VERSION}"/rad_linux_amd64"
+    if ! curl -sLf -o ./rad "$URL"; then
+        echo "ERROR: Unable to download file"
         exit 1
     fi
 }

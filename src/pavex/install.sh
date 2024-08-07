@@ -19,20 +19,21 @@ check curl ca-certificates jq xz-utils
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://api.github.com/repos/LukeMathWalker/pavex/releases/latest | jq -r ".tag_name" | sed 's/v//')
-        if [ $? -ne 0 ]; then
-            echo "Version check failed"
+        URL="https://api.github.com/repos/LukeMathWalker/pavex/releases/latest"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
 }
 
 download() {
-    curl -sLf -o ./pavex_cli-x86_64-unknown-linux-gnu.tar.xz https://github.com/LukeMathWalker/pavex/releases/download/"${VERSION}"/pavex_cli-x86_64-unknown-linux-gnu.tar.xz
-    if [ $? -ne 0 ]; then
-        echo "File download failed"
+    URL="https://github.com/LukeMathWalker/pavex/releases/download/"${VERSION}"/pavex_cli-x86_64-unknown-linux-gnu.tar.xz"
+    if ! curl -sLf -o ./pavex_cli-x86_64-unknown-linux-gnu.tar.xz "$URL"; then
+        echo "ERROR: Unable to download file"
         exit 1
     fi
 }
