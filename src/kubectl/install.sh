@@ -24,7 +24,7 @@ version() {
             echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
-        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
+        export VERSION=$(cat ./response.json | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
