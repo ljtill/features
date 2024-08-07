@@ -33,7 +33,7 @@ version() {
 download() {
     URL="https://github.com/argoproj/argo-cd/releases/download/v"${VERSION}"/argocd-linux-amd64"
     if ! curl -sLf -o ./argocd "$URL"; then
-        echo "ERROR: Download failed"
+        echo "ERROR: Unable to download file"
         exit 1
     fi
 }

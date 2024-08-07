@@ -19,7 +19,12 @@ check curl ca-certificates jq
 
 version() {
     if [ "${VERSION}" = "latest" ]; then
-        export VERSION=$(curl -sLf https://api.github.com/repos/fluxcd/flux2/releases/latest | jq -r ".tag_name" | sed 's/v//')
+        URL="https://api.github.com/repos/fluxcd/flux2/releases/latest"
+        if ! curl -sLf -o ./response.json "$URL"; then
+            echo "ERROR: Unable to fetch latest version"
+            exit 1
+        fi
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
     else
         export VERSION=$(echo ${VERSION} | sed 's/v//')
     fi
@@ -28,7 +33,7 @@ version() {
 download() {
     URL="https://github.com/fluxcd/flux2/releases/download/v"${VERSION}"/flux_"${VERSION}"_linux_amd64.tar.gz"
     if ! curl -sLf -o ./flux_linux_amd64.tar.gz "$URL"; then
-        echo "ERROR: Download failed"
+        echo "ERROR: Unable to download file"
         exit 1
     fi
 }
