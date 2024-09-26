@@ -17,6 +17,12 @@ Command line tool (task)
 |-----|-----|-----|-----|
 | version | Select version of task | string | latest |
 
+## Customizations
+
+### VS Code Extensions
+
+- `task.vscode-task`
+
 
 
 ---
