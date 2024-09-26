@@ -20,6 +20,7 @@ check "istioctl" istioctl version --remote=false
 check "kind" kind version
 check "kubebuilder" kubebuilder version
 check "kubectl" kubectl version --client=true --output=json
+check "mkcert" mkcert --version
 check "pavex" pavex --version
 check "pulumi" pulumi version
 check "rad" rad version

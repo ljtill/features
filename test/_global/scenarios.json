@@ -16,6 +16,7 @@
             "kind": {},
             "kubebuilder": {},
             "kubectl": {},
+            "mkcert": {},
             "pavex": {},
             "pulumi": {},
             "rad": {},
