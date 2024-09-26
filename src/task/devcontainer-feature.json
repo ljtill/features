@@ -1,0 +1,15 @@
+{
+    "id": "task",
+    "version": "1.0.0",
+    "name": "Task CLI",
+    "description": "Command line tool (task)",
+    "documentationURL": "https://github.com/go-task/task",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of task",
+            "default": "latest"
+        }
+    },
+    "customizations": {}
+}
