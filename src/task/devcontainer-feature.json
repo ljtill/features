@@ -1,6 +1,6 @@
 {
     "id": "task",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Task CLI",
     "description": "Command line tool (task)",
     "documentationURL": "https://github.com/go-task/task",
@@ -11,5 +11,11 @@
             "default": "latest"
         }
     },
-    "customizations": {}
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "task.vscode-task"
+            ]
+        }
+    }
 }
