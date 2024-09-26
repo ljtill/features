@@ -31,7 +31,7 @@ version() {
 }
 
 download() {
-    URL="https://github.com/FiloSottile/mkcert/releases/download/"${VERSION}"/mkcert-v"${VERSION}"-linux-amd64"
+    URL="https://github.com/FiloSottile/mkcert/releases/download/v"${VERSION}"/mkcert-v"${VERSION}"-linux-amd64"
     if ! curl -sLf -o ./mkcert-v"${VERSION}"-linux-amd64 "$URL"; then
         echo "ERROR: Unable to download file"
         exit 1
@@ -44,7 +44,7 @@ install() {
     mv ./mkcert-v"${VERSION}"-linux-amd64 /usr/local/bin/mkcert
 }
 
-echo "Activating feature 'helm'"
+echo "Activating feature 'mkcert'"
 
 version
 download
