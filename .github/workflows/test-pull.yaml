@@ -27,6 +27,7 @@ jobs:
             kind: ./**/kind/**
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
+            mkcert: ./**/mkcert/**
             pavex: ./**/pavex/**
             pulumi: ./**/pulumi/**
             rad: ./**/rad/**
