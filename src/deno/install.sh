@@ -31,8 +31,21 @@ version() {
 }
 
 download() {
-    URL="https://github.com/denoland/deno/releases/download/v"${VERSION}"/deno-x86_64-unknown-linux-gnu.zip"
-    if ! curl -sLf -o ./deno-x86_64-unknown-linux-gnu.zip "$URL"; then
+    case $(uname -m) in
+    "x86_64")
+        FILE="deno-x86_64-unknown-linux-gnu.zip"
+        ;;
+    "aarch64")
+        FILE="deno-aarch64-apple-darwin.zip"
+        ;;
+    *)
+        echo "Unsupported architecture"
+        exit 1
+        ;;
+    esac
+
+    URL="https://github.com/denoland/deno/releases/download/v"${VERSION}"/$FILE"
+    if ! curl -sLf -o ./$FILE "$URL"; then
         echo "ERROR: Unable to download file"
         exit 1
     fi
