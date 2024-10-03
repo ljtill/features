@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-scenarios:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runners }}
     continue-on-error: true
     strategy:
       matrix:
@@ -38,6 +38,9 @@ jobs:
           - wit-bindgen
           - wit-deps
           - zig
+        runners:
+          - macos-latest
+          - ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
