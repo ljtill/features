@@ -14,7 +14,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "pulumi.pulumi-lsp-client"
+                "pulumi.pulumi-vscode-tools"
             ]
         }
     }
