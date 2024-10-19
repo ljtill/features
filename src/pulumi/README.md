@@ -21,7 +21,7 @@ Command line tool (pulumi)
 
 ### VS Code Extensions
 
-- `pulumi.pulumi-lsp-client`
+- `pulumi.pulumi-vscode-tools`
 
 
 
