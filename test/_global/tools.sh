@@ -26,7 +26,6 @@ check "pulumi" pulumi version
 check "rad" rad version
 check "spin" spin --version
 check "task" task --version
-check "wabt" wasm2c --version
 check "wasm-tools" wasm-tools --version
 check "wasmtime" wasmtime --version
 check "wit-bindgen" wit-bindgen --version
