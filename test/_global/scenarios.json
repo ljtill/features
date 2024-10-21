@@ -22,7 +22,6 @@
             "rad": {},
             "spin": {},
             "task": {},
-            "wabt": {},
             "wasm-tools": {},
             "wasmtime": {},
             "wit-bindgen": {},

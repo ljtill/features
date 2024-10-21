@@ -33,7 +33,6 @@ jobs:
             rad: ./**/rad/**
             spin: ./**/spin/**
             task: ./**/task/**
-            wabt: ./**/wabt/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**
