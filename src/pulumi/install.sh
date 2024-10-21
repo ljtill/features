@@ -41,8 +41,8 @@ download() {
 install() {
     tar -zxof ./pulumi-linux-x64.tar.gz
     chmod +x ./pulumi/pulumi
-    chown root:root ./pulumi/pulumi
-    mv ./pulumi/pulumi /usr/local/bin/pulumi
+    chown -R root:root ./pulumi/
+    mv ./pulumi/* /usr/local/bin/
 }
 
 echo "Activating feature 'pulumi'"
