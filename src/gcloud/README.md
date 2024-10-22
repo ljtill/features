@@ -1,13 +1,13 @@
 
-# Argo CD (argocd)
+# Google Cloud (gcloud)
 
-Command line tool (argo-cd)
+Command line tool (gcloud)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/argocd:1": {}
+    "ghcr.io/ljtill/features/gcloud:1": {}
 }
 ```
 
@@ -15,10 +15,10 @@ Command line tool (argo-cd)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of argo-cd | string | latest |
+| version | Select version of gcloud | string | latest |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/argocd/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/gcloud/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
