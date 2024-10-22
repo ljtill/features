@@ -24,24 +24,24 @@ version() {
             echo "ERROR: Unable to fetch latest version"
             exit 1
         fi
-        export VERSION=$(cat ./response.json | jq -r ".tag_name")
+        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/version_//')
     else
-        export VERSION=$(echo ${VERSION})
+        export VERSION=$(echo ${VERSION} | sed 's/version_//')
     fi
 }
 
 download() {
-    URL="https://github.com/WebAssembly/binaryen/releases/download/"${VERSION}"/binaryen-"${VERSION}"-x86_64-linux.tar.gz"
-    if ! curl -sLf -o ./binaryen-"${VERSION}"-x86_64-linux.tar.gz "$URL"; then
+    URL="https://github.com/WebAssembly/binaryen/releases/download/version_"${VERSION}"/binaryen-version_"${VERSION}"-x86_64-linux.tar.gz"
+    if ! curl -sLf -o ./binaryen-version_"${VERSION}"-x86_64-linux.tar.gz "$URL"; then
         echo "ERROR: Unable to download file"
         exit 1
     fi
 }
 
 install() {
-    tar -zxof ./binaryen-"${VERSION}"-x86_64-linux.tar.gz
-    chown -R root:root ./binaryen-"${VERSION}"
-    mv ./binaryen-"${VERSION}" /usr/local/lib/binaryen
+    tar -zxof ./binaryen-version_"${VERSION}"-x86_64-linux.tar.gz
+    chown -R root:root ./binaryen-version_"${VERSION}"
+    mv ./binaryen-version_"${VERSION}" /usr/local/lib/binaryen
 }
 
 link() {
