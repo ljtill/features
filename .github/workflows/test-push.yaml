@@ -21,6 +21,7 @@ jobs:
           - deno
           - flux
           - func
+          - gcloud
           - helm
           - istioctl
           - kind

@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "gcloud": {
+                "version": "498.0.0"
+            }
+        }
+    }
+}

@@ -22,6 +22,7 @@ jobs:
             deno: ./**/deno/**
             flux: ./**/flux/**
             func: ./**/func/**
+            gcloud: ./**/gcloud/**
             helm: ./**/helm/**
             istioctl: ./**/istioctl/**
             kind: ./**/kind/**
