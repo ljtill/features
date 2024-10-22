@@ -41,23 +41,23 @@ download() {
 install() {
     tar -zxof ./binaryen-version_"${VERSION}"-x86_64-linux.tar.gz
     chown -R root:root ./binaryen-version_"${VERSION}"
-    mv ./binaryen-version_"${VERSION}" /usr/local/lib/binaryen
+    mv ./binaryen-version_"${VERSION}" /opt/binaryen
 }
 
 link() {
-    ln -s ../lib/binaryen/bin/wasm2js /usr/local/bin/wasm2js
-    ln -s ../lib/binaryen/bin/wasm-as /usr/local/bin/wasm-as
-    ln -s ../lib/binaryen/bin/wasm-ctor-eval /usr/local/bin/wasm-ctor-eval
-    ln -s ../lib/binaryen/bin/wasm-dis /usr/local/bin/wasm-dis
-    ln -s ../lib/binaryen/bin/wasm-emscripten-finalize /usr/local/bin/wasm-emscripten-finalize
-    ln -s ../lib/binaryen/bin/wasm-fuzz-lattices /usr/local/bin/wasm-fuzz-lattices
-    ln -s ../lib/binaryen/bin/wasm-fuzz-types /usr/local/bin/wasm-fuzz-types
-    ln -s ../lib/binaryen/bin/wasm-merge /usr/local/bin/wasm-merge
-    ln -s ../lib/binaryen/bin/wasm-metadce /usr/local/bin/wasm-metadce
-    ln -s ../lib/binaryen/bin/wasm-opt /usr/local/bin/wasm-opt
-    ln -s ../lib/binaryen/bin/wasm-reduce /usr/local/bin/wasm-reduce
-    ln -s ../lib/binaryen/bin/wasm-shell /usr/local/bin/wasm-shell
-    ln -s ../lib/binaryen/bin/wasm-split /usr/local/bin/wasm-split
+    ln -s /opt/binaryen/bin/wasm2js /usr/local/bin/wasm2js
+    ln -s /opt/binaryen/bin/wasm-as /usr/local/bin/wasm-as
+    ln -s /opt/binaryen/bin/wasm-ctor-eval /usr/local/bin/wasm-ctor-eval
+    ln -s /opt/binaryen/bin/wasm-dis /usr/local/bin/wasm-dis
+    ln -s /opt/binaryen/bin/wasm-emscripten-finalize /usr/local/bin/wasm-emscripten-finalize
+    ln -s /opt/binaryen/bin/wasm-fuzz-lattices /usr/local/bin/wasm-fuzz-lattices
+    ln -s /opt/binaryen/bin/wasm-fuzz-types /usr/local/bin/wasm-fuzz-types
+    ln -s /opt/binaryen/bin/wasm-merge /usr/local/bin/wasm-merge
+    ln -s /opt/binaryen/bin/wasm-metadce /usr/local/bin/wasm-metadce
+    ln -s /opt/binaryen/bin/wasm-opt /usr/local/bin/wasm-opt
+    ln -s /opt/binaryen/bin/wasm-reduce /usr/local/bin/wasm-reduce
+    ln -s /opt/binaryen/bin/wasm-shell /usr/local/bin/wasm-shell
+    ln -s /opt/binaryen/bin/wasm-split /usr/local/bin/wasm-split
 }
 
 echo "Activating feature 'binaryen'"

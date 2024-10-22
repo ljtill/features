@@ -1,6 +1,6 @@
 {
     "id": "binaryen",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "name": "Binaryen",
     "description": "Command line tool (binaryen)",
     "documentationURL": "https://github.com/WebAssembly/binaryen",
