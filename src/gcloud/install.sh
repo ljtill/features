@@ -36,7 +36,7 @@ download() {
 install() {
     tar -zxof ./google-cloud-cli-linux-x86_64.tar.gz
     mv ./google-cloud-sdk /opt/
-    /opt/google-cloud-sdk/install.sh --command-completion true --path-update true --quiet
+    /opt/google-cloud-sdk/install.sh --rc-path /etc/bash.bashrc --quiet
 }
 
 echo "Activating feature 'gcloud'"
