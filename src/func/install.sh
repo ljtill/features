@@ -44,6 +44,9 @@ install() {
     chmod +x ./azure-functions-cli/gozip
     chown -R root:root ./azure-functions-cli
     mv ./azure-functions-cli /opt
+}
+
+link() {
     ln -s /opt/azure-functions-cli/func /usr/local/bin/func
     ln -s /opt/azure-functions-cli/gozip /usr/local/bin/gozip
 }
@@ -53,3 +56,4 @@ echo "Activating feature 'func'"
 version
 download
 install
+link
