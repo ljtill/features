@@ -15,6 +15,7 @@ check "clusterctl" clusterctl version
 check "deno" deno --version
 check "flux" flux version --client --output json
 check "func" func version
+check "gcloud" gcloud version
 check "helm" helm version
 check "istioctl" istioctl version --remote=false
 check "kind" kind version
