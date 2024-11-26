@@ -30,6 +30,7 @@ jobs:
             kubectl: ./**/kubectl/**
             mkcert: ./**/mkcert/**
             pavex: ./**/pavex/**
+            promptflow: ./**/promptflow/**
             pulumi: ./**/pulumi/**
             rad: ./**/rad/**
             spin: ./**/spin/**
