@@ -11,5 +11,11 @@
             "default": "latest"
         }
     },
-    "customizations": {}
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bytecodealliance.wit-idl"
+            ]
+        }
+    }
 }
