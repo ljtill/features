@@ -17,6 +17,12 @@ Command line tool (wit-deps)
 |-----|-----|-----|-----|
 | version | Select version of wit-deps | string | latest |
 
+## Customizations
+
+### VS Code Extensions
+
+- `bytecodealliance.wit-idl`
+
 
 
 ---
