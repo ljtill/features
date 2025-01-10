@@ -1,6 +1,6 @@
 {
     "id": "gcloud",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "Google Cloud",
     "description": "Command line tool (gcloud)",
     "documentationURL": "https://cloud.google.com",
@@ -11,5 +11,11 @@
             "default": "latest"
         }
     },
-    "customizations": {}
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "googlecloudtools.cloudcode"
+            ]
+        }
+    }
 }
