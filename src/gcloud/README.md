@@ -17,6 +17,12 @@ Command line tool (gcloud)
 |-----|-----|-----|-----|
 | version | Select version of gcloud | string | latest |
 
+## Customizations
+
+### VS Code Extensions
+
+- `googlecloudtools.cloudcode`
+
 
 
 ---
