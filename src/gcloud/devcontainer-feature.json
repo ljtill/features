@@ -9,6 +9,11 @@
             "type": "string",
             "description": "Select version of gcloud",
             "default": "latest"
+        },
+        {
+            "type": "boolean",
+            "description": "Update gcloud components",
+            "default": true
         }
     },
     "customizations": {
