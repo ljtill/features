@@ -8,5 +8,12 @@
                 "update": false
             }
         }
+    },
+    "update": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "user": "vscode",
+        "features": {
+            "gcloud": {}
+        }
     }
 }
