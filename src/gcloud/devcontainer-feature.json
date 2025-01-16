@@ -10,7 +10,7 @@
             "description": "Select version of gcloud",
             "default": "latest"
         },
-        {
+        "update": {
             "type": "boolean",
             "description": "Update gcloud components",
             "default": true
