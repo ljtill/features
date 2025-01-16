@@ -9,7 +9,7 @@ source dev-container-features-test-lib
 check "vscode" whoami | grep vscode
 
 # Options-specific tests
-check "version" gcloud version | grep "498.0.0"
+check "version" gcloud version | grep "505.0.0"
 
 # Report result
 reportResults
