@@ -39,8 +39,13 @@ install() {
     /opt/google-cloud-sdk/install.sh --rc-path /etc/bash.bashrc --quiet
 }
 
+update() {
+    /opt/google-cloud-sdk/bin/gcloud components update
+}
+
 echo "Activating feature 'gcloud'"
 
 version
 download
 install
+update
