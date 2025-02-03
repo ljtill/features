@@ -1,0 +1,21 @@
+{
+    "id": "atlas",
+    "version": "1.0.0",
+    "name": "Atlas CLI",
+    "description": "Command line tool (atlas)",
+    "documentationURL": "https://www.mongodb.com/docs/atlas/cli/current/",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of atlas",
+            "default": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mongodb.mongodb-vscode"
+            ]
+        }
+    }
+}

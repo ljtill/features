@@ -7,6 +7,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "argocd" argocd version --client --output json
+check "atlas" atlas --version
 check "bicep" bicep --version
 check "binaryen" wasm2js --version
 check "calicoctl" calicoctl version
