@@ -14,6 +14,7 @@ jobs:
         with:
           filters: |
             argocd: ./**/argocd/**
+            atlas: ./**/atlas/**
             bicep: ./**/bicep/**
             binaryen: ./**/binaryen/**
             calicoctl: ./**/calicoctl/**
