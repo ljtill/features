@@ -1,9 +1,0 @@
-{
-    "id": "promptflow",
-    "version": "1.0.0",
-    "name": "Prompt Flow",
-    "description": "Command line tool (pf)",
-    "documentationURL": "https://microsoft.github.io/promptflow",
-    "options": {},
-    "customizations": {}
-}
