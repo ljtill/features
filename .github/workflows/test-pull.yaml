@@ -29,11 +29,7 @@ jobs:
             kind: ./**/kind/**
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
-            mkcert: ./**/mkcert/**
-            pavex: ./**/pavex/**
-            promptflow: ./**/promptflow/**
             pulumi: ./**/pulumi/**
-            rad: ./**/rad/**
             spin: ./**/spin/**
             task: ./**/task/**
             wasm-tools: ./**/wasm-tools/**
@@ -44,10 +40,13 @@ jobs:
 
   test-features:
     needs: [detect-changes]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.image }}
     continue-on-error: true
     strategy:
       matrix:
+        image:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
         baseImage:
           - mcr.microsoft.com/devcontainers/base:bullseye # Debian 11
@@ -65,10 +64,13 @@ jobs:
 
   test-scenarios:
     needs: [detect-changes]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.image }}
     continue-on-error: true
     strategy:
       matrix:
+        image:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
     steps:
       - uses: actions/checkout@v4
