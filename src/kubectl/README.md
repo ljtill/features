@@ -16,7 +16,6 @@ Command line tool (kubectl)
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select version of kubectl | string | latest |
-| kubelogin | Optionally install kubelogin (https://aka.ms/aks/kubelogin) | boolean | true |
 
 ## Customizations
 
