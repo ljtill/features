@@ -16,7 +16,6 @@ Command line tool (gcloud)
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select version of gcloud | string | latest |
-| update | Update gcloud components | boolean | true |
 
 ## Customizations
 
