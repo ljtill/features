@@ -1,10 +1,10 @@
 {
     "version": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "user": "vscode",
         "features": {
             "wasm-tools": {
-                "version": "1.200.0"
+                "version": "1.224.0"
             }
         }
     }

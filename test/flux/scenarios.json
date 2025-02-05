@@ -1,10 +1,10 @@
 {
     "version": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "user": "vscode",
         "features": {
             "flux": {
-                "version": "2.1.0"
+                "version": "2.4.0"
             }
         }
     }

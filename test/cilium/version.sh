@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" cilium version --client | grep "v0.15.20"
+check "version" cilium version --client | grep "0.16.24"
 
 # Report result
 reportResults

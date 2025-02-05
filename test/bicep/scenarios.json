@@ -1,10 +1,10 @@
 {
     "version": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "user": "vscode",
         "features": {
             "bicep": {
-                "version": "0.24.24"
+                "version": "0.33.93"
             }
         }
     }
