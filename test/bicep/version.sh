@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" bicep --version | grep "0.24.24"
+check "version" bicep --version | grep "0.33.93"
 
 # Report result
 reportResults

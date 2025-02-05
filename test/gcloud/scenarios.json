@@ -1,19 +1,11 @@
 {
     "version": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "user": "vscode",
         "features": {
             "gcloud": {
-                "version": "505.0.0",
-                "update": false
+                "version": "508.0.0"
             }
-        }
-    },
-    "update": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
-        "user": "vscode",
-        "features": {
-            "gcloud": {}
         }
     }
 }

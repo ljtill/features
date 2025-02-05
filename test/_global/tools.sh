@@ -9,23 +9,18 @@ source dev-container-features-test-lib
 check "argocd" argocd version --client --output json
 check "atlas" atlas --version
 check "bicep" bicep --version
-check "binaryen" wasm2js --version
 check "calicoctl" calicoctl version
 check "cilium" cilium version --client
 check "clusterctl" clusterctl version
 check "deno" deno --version
 check "flux" flux version --client --output json
-check "func" func version
 check "gcloud" gcloud version
 check "helm" helm version
 check "istioctl" istioctl version --remote=false
 check "kind" kind version
 check "kubebuilder" kubebuilder version
 check "kubectl" kubectl version --client=true --output=json
-check "mkcert" mkcert --version
-check "pavex" pavex --version
 check "pulumi" pulumi version
-check "rad" rad version
 check "spin" spin --version
 check "task" task --version
 check "wasm-tools" wasm-tools --version

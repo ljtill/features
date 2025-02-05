@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" istioctl version --remote=false | grep "1.18.2"
+check "version" istioctl version --remote=false | grep "1.24.2"
 
 # Report result
 reportResults

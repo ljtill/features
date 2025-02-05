@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" calicoctl version | grep "v3.26.2"
+check "version" calicoctl version | grep "3.29.1"
 
 # Report result
 reportResults

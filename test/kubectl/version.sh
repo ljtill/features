@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" kubectl version --client=true --output=json | grep "1.28.1"
+check "version" kubectl version --client=true --output=json | grep "1.32.1"
 
 # Report result
 reportResults

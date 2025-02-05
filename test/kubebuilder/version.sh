@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" kubebuilder version | grep "3.11.1"
+check "version" kubebuilder version | grep "4.5.0"
 
 # Report result
 reportResults

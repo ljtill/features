@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" wasmtime --version | grep "12.0.1"
+check "version" wasmtime --version | grep "29.0.1"
 
 # Report result
 reportResults

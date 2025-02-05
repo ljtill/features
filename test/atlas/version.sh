@@ -6,7 +6,7 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
 check "version" atlas --version | grep "1.37.0"

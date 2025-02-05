@@ -1,6 +1,6 @@
 {
     "id": "kubebuilder",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "name": "Kubebuilder",
     "description": "Command line tool (kubebuilder)",
     "documentationURL": "https://book.kubebuilder.io",

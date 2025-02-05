@@ -1,10 +1,10 @@
 {
     "version": {
-        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "user": "vscode",
         "features": {
             "kind": {
-                "version": "0.20.0"
+                "version": "0.26.0"
             }
         }
     }

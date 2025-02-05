@@ -1,6 +1,6 @@
 {
     "id": "kubectl",
-    "version": "1.4.4",
+    "version": "1.5.0",
     "name": "Kubernetes CLI",
     "description": "Command line tool (kubectl)",
     "documentationURL": "https://kubernetes.io/docs/reference/kubectl",
@@ -9,11 +9,6 @@
             "type": "string",
             "description": "Select version of kubectl",
             "default": "latest"
-        },
-        "kubelogin": {
-            "type": "boolean",
-            "description": "Optionally install kubelogin (https://aka.ms/aks/kubelogin)",
-            "default": true
         }
     },
     "customizations": {

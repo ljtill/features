@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" pulumi version | grep "3.80.0"
+check "version" pulumi version | grep "3.148.0"
 
 # Report result
 reportResults

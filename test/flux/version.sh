@@ -6,10 +6,10 @@ set -e
 source dev-container-features-test-lib
 
 # Check the user
-check "vscode" whoami | grep vscode
+check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" flux version --client --output json | grep "2.1.0"
+check "version" flux version --client --output json | grep "2.4.0"
 
 # Report result
 reportResults

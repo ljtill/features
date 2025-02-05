@@ -1,51 +1,93 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 cd "$(mktemp -d)"
 
-check() {
+log() {
+    local LEVEL="$1"
+    shift
+    echo "[$LEVEL] $*"
+}
+
+check_deps() {
+    log "INFO" "Checking required dependencies: $*"
+    export DEBIAN_FRONTEND=noninteractive
+
     if ! dpkg -s "$@" > /dev/null 2>&1; then
-        if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
-            echo "Running apt update..."
+        if [ ! -f /var/lib/apt/lists/lock ]; then
+            log "INFO" "Running apt update..."
             apt update -y
         fi
+        log "INFO" "Installing missing dependencies: $*"
         apt -y install --no-install-recommends "$@"
+    else
+        log "INFO" "All required dependencies are already installed."
     fi
 }
 
-export DEBIAN_FRONTEND=noninteractive
+check_deps curl ca-certificates jq
 
-check curl ca-certificates jq
+get_version() {
+    VERSION="${VERSION:-latest}"
 
-version() {
-    if [ "${VERSION}" = "latest" ]; then
+    if [ "$VERSION" = "latest" ]; then
+        log "INFO" "Fetching latest WIT Deps version from GitHub..."
         URL="https://api.github.com/repos/bytecodealliance/wit-deps/releases/latest"
-        if ! curl -sLf -o ./response.json "$URL"; then
-            echo "ERROR: Unable to fetch latest version"
+
+        if ! curl -sLf --fail -o ./response.json "$URL"; then
+            log "ERROR" "Unable to fetch latest version from GitHub API!"
             exit 1
         fi
-        export VERSION=$(cat ./response.json | jq -r ".tag_name" | sed 's/v//')
+
+        VERSION=$(jq -r ".tag_name" < ./response.json | sed 's/v//')
+        log "INFO" "Latest version found: v$VERSION"
     else
-        export VERSION=$(echo ${VERSION} | sed 's/v//')
+        VERSION=$(echo "$VERSION" | sed 's/v//')
+        log "INFO" "Using specified version: v$VERSION"
     fi
+
+    export VERSION
 }
 
-download() {
-    URL="https://github.com/bytecodealliance/wit-deps/releases/download/v"${VERSION}"/wit-deps-x86_64-unknown-linux-musl"
-    if ! curl -sLf -o ./wit-deps-x86_64-unknown-linux-musl "$URL"; then
-        echo "ERROR: Unable to download file"
+detect_arch() {
+    log "INFO" "Detecting system architecture..."
+    case "$(uname -m)" in
+        x86_64 | amd64) ARCH="x86_64" ;;
+        aarch64 | arm64) ARCH="aarch64" ;;
+        *) log "ERROR" "Unsupported architecture: $(uname -m)"; exit 1 ;;
+    esac
+    log "INFO" "Architecture detected: $ARCH"
+    export ARCH
+}
+
+download_binary() {
+    if [ -z "$VERSION" ]; then
+        log "ERROR" "Missing version information!"
         exit 1
     fi
+
+    URL="https://github.com/bytecodealliance/wit-deps/releases/download/v${VERSION}/wit-deps-${ARCH}-unknown-linux-musl"
+    log "INFO" "Downloading WIT Deps from $URL"
+
+    if ! curl -sLf --fail -o ./wit-deps "$URL"; then
+        log "ERROR" "Failed to download WIT Deps!"
+        exit 1
+    fi
+
+    log "INFO" "Download complete!"
 }
 
-install() {
-    chmod +x ./wit-deps-x86_64-unknown-linux-musl
-    chown root:root ./wit-deps-x86_64-unknown-linux-musl
-    mv ./wit-deps-x86_64-unknown-linux-musl /usr/local/bin/wit-deps
+install_binary() {
+    log "INFO" "Installing WIT Deps..."
+    install -m 0755 ./wit-deps /usr/local/bin/wit-deps
+    log "INFO" "WIT Deps installed successfully to /usr/local/bin/wit-deps"
 }
 
-echo "Activating feature 'wit-deps'"
+log "INFO" "Activating feature 'wit-deps'"
 
-version
-download
-install
+get_version
+detect_arch
+download_binary
+install_binary
+
+log "INFO" "Installation complete!"
