@@ -28,6 +28,7 @@ jobs:
             kind: ./**/kind/**
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
+            mongosh: ./**/mongosh/**
             pulumi: ./**/pulumi/**
             spin: ./**/spin/**
             task: ./**/task/**

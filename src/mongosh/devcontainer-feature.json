@@ -1,0 +1,21 @@
+{
+    "id": "mongosh",
+    "version": "1.0.0",
+    "name": "MongoDB Shell CLI",
+    "description": "Command line tool (mongosh)",
+    "documentationURL": "https://www.mongodb.com/docs/mongodb-shell/",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of mongosh",
+            "default": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mongodb.mongodb-vscode"
+            ]
+        }
+    }
+}

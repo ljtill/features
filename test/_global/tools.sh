@@ -21,6 +21,7 @@ check "just" just --version
 check "kind" kind version
 check "kubebuilder" kubebuilder version
 check "kubectl" kubectl version --client=true --output=json
+check "mongosh" mongosh --version
 check "pulumi" pulumi version
 check "spin" spin --version
 check "task" task --version
