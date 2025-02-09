@@ -1,5 +1,5 @@
 
-# WIT Bindgen CLI (wit-bindgen)
+# WIT Bindgen (wit-bindgen)
 
 Command line tool (wit-bindgen)
 

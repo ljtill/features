@@ -1,5 +1,5 @@
 
-# Bicep CLI (bicep)
+# Bicep (bicep)
 
 Command line tool (bicep)
 

@@ -1,5 +1,5 @@
 
-# Kubernetes in Docker CLI (kind)
+# Kubernetes in Docker (kind)
 
 Command line tool (kind)
 

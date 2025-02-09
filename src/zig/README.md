@@ -1,5 +1,5 @@
 
-# Zig CLI (zig)
+# Zig (zig)
 
 Command line tool (zig)
 

@@ -1,5 +1,5 @@
 
-# Task CLI (task)
+# Task (task)
 
 Command line tool (task)
 
