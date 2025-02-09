@@ -19,6 +19,7 @@
             "kubectl": {},
             "mongosh": {},
             "pulumi": {},
+            "redis": {},
             "spin": {},
             "task": {},
             "wasm-tools": {},

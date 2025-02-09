@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "user": "vscode",
+        "features": {
+            "redis": {
+                "version": "7.4.2"
+            }
+        }
+    }
+}
