@@ -1,7 +1,7 @@
 {
     "id": "wit-deps",
     "version": "1.2.0",
-    "name": "WIT Dependency Manager CLI",
+    "name": "WIT Dependency Manager",
     "description": "Command line tool (wit-deps)",
     "documentationURL": "https://github.com/bytecodealliance/wit-deps",
     "options": {
