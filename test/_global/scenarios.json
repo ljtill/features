@@ -13,6 +13,7 @@
             "gcloud": {},
             "helm": {},
             "istioctl": {},
+            "just": {},
             "kind": {},
             "kubebuilder": {},
             "kubectl": {},

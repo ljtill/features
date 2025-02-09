@@ -24,6 +24,7 @@ jobs:
             gcloud: ./**/gcloud/**
             helm: ./**/helm/**
             istioctl: ./**/istioctl/**
+            just: ./**/just/**
             kind: ./**/kind/**
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
