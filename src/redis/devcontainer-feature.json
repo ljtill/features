@@ -1,0 +1,21 @@
+{
+    "id": "redis",
+    "version": "1.0.0",
+    "name": "Redis",
+    "description": "Command line tool (redis)",
+    "documentationURL": "https://redis.io/docs",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of redis",
+            "default": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redis.redis-for-vscode"
+            ]
+        }
+    }
+}
