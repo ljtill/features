@@ -17,6 +17,7 @@ check "flux" flux version --client --output json
 check "gcloud" gcloud version
 check "helm" helm version
 check "istioctl" istioctl version --remote=false
+check "just" just --version
 check "kind" kind version
 check "kubebuilder" kubebuilder version
 check "kubectl" kubectl version --client=true --output=json
