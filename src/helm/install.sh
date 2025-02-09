@@ -81,7 +81,6 @@ install_binary() {
     log "INFO" "Installing Helm..."
     tar -zxof ./helm.tar.gz
     install -m 0755 ./linux-${ARCH}/helm /usr/local/bin/helm
-    rm -rf ./linux-${ARCH}
     log "INFO" "Helm installed successfully to /usr/local/bin/helm"
 }
 
