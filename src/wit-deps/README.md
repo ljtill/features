@@ -1,5 +1,5 @@
 
-# WIT Dependency Manager CLI (wit-deps)
+# WIT Dependency Manager (wit-deps)
 
 Command line tool (wit-deps)
 

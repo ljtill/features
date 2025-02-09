@@ -1,13 +1,13 @@
 
-# Atlas CLI (atlas)
+# MongoDB Shell (mongosh)
 
-Command line tool (atlas)
+Command line tool (mongosh)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/atlas:1": {}
+    "ghcr.io/ljtill/features/mongosh:1": {}
 }
 ```
 
@@ -15,7 +15,7 @@ Command line tool (atlas)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of atlas | string | latest |
+| version | Select version of mongosh | string | latest |
 
 ## Customizations
 
@@ -27,4 +27,4 @@ Command line tool (atlas)
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/atlas/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/mongosh/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -1,5 +1,5 @@
 
-# Wasmtime CLI (wasmtime)
+# Wasmtime (wasmtime)
 
 Command line tool (wasmtime)
 

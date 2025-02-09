@@ -1,5 +1,5 @@
 
-# Atlas CLI (atlas)
+# Atlas (atlas)
 
 Command line tool (atlas)
 

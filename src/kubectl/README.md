@@ -1,5 +1,5 @@
 
-# Kubernetes CLI (kubectl)
+# Kubernetes (kubectl)
 
 Command line tool (kubectl)
 

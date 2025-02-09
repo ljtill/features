@@ -1,5 +1,5 @@
 
-# Deno CLI (deno)
+# Deno (deno)
 
 Command line tool (deno)
 

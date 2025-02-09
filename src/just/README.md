@@ -1,5 +1,5 @@
 
-# Just CLI (just)
+# Just (just)
 
 Command line tool (just)
 
