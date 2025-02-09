@@ -69,11 +69,11 @@ download_binary() {
         exit 1
     fi
 
-    URL="https://github.com/mongodb/mongodb-atlas-cli/releases/download/atlascli%2Fv${VERSION}/mongodb-atlas-cli_${VERSION}_linux_${ARCH}.deb"
+    URL="https://github.com/mongodb/mongodb-atlas-cli/releases/download/atlascli%2Fv${VERSION}/mongodb-atlas-cli_${VERSION}_linux_${ARCH}.tar.gz"
 
     log "INFO" "Downloading MongoDB Atlas CLI from $URL"
 
-    if ! curl -sLf --fail -o ./mongodb-atlas-cli.deb "$URL"; then
+    if ! curl -sLf --fail -o ./mongodb-atlas-cli.tar.gz "$URL"; then
         log "ERROR" "Failed to download MongoDB Atlas CLI!"
         exit 1
     fi
@@ -83,7 +83,8 @@ download_binary() {
 
 install_binary() {
     log "INFO" "Installing MongoDB Atlas CLI..."
-    apt install -y ./mongodb-atlas-cli.deb
+    tar -zxof ./mongodb-atlas-cli.tar.gz
+    install -m 0755 ./mongodb-atlas-cli_${VERSION}_linux_${ARCH}/bin/atlas /usr/local/bin/atlas
     log "INFO" "MongoDB Atlas CLI installed successfully to /usr/bin/atlas"
 }
 
