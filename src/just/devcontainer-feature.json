@@ -1,7 +1,7 @@
 {
     "id": "just",
     "version": "1.0.0",
-    "name": "Just CLI",
+    "name": "Just",
     "description": "Command line tool (just)",
     "documentationURL": "https://just.systems/man/en",
     "options": {

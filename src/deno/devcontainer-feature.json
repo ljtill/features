@@ -1,7 +1,7 @@
 {
     "id": "deno",
     "version": "1.1.0",
-    "name": "Deno CLI",
+    "name": "Deno",
     "description": "Command line tool (deno)",
     "documentationURL": "https://docs.deno.com",
     "options": {

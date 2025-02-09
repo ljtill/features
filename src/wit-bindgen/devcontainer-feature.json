@@ -1,7 +1,7 @@
 {
     "id": "wit-bindgen",
     "version": "1.1.0",
-    "name": "WIT Bindgen CLI",
+    "name": "WIT Bindgen",
     "description": "Command line tool (wit-bindgen)",
     "documentationURL": "https://github.com/bytecodealliance/wit-bindgen",
     "options": {
