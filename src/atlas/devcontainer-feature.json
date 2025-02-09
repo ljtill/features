@@ -3,7 +3,7 @@
     "version": "1.1.0",
     "name": "Atlas CLI",
     "description": "Command line tool (atlas)",
-    "documentationURL": "https://www.mongodb.com/docs/atlas/cli/current/",
+    "documentationURL": "https://www.mongodb.com/docs/atlas/cli/current",
     "options": {
         "version": {
             "type": "string",

@@ -84,7 +84,7 @@ download_binary() {
 install_binary() {
     log "INFO" "Installing MongoDB Atlas CLI..."
     apt install -y ./mongodb-atlas-cli.deb
-    log "INFO" "MongoDB Atlas CLI installed successfully!"
+    log "INFO" "MongoDB Atlas CLI installed successfully to /usr/bin/atlas"
 }
 
 log "INFO" "Activating feature 'atlas'"
