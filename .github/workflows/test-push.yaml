@@ -30,6 +30,7 @@ jobs:
           - kind
           - kubebuilder
           - kubectl
+          - mongosh
           - pulumi
           - spin
           - task
