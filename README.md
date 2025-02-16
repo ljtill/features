@@ -1,14 +1,50 @@
 # Development Container Features
 
-<table style="width: 100%; border-style: none;"><tr>
-<td style="width: 140px; text-align: center;"><a href="https://github.com/devcontainers"><img width="128px" src="https://raw.githubusercontent.com/microsoft/fluentui-system-icons/78c9587b995299d5bfc007a0077773556ecb0994/assets/Cube/SVG/ic_fluent_cube_32_filled.svg" alt="devcontainers organization logo"/></a></td>
-<td>
-<strong>Development Container 'Features'</strong><br />
-<i>A set of simple and reusable Features. Quickly add a language/tool/CLI to a development container.
-</td>
-</tr></table>
+A collection of reusable Development Container Features for adding tools, CLIs and languages to your dev containers.
 
-'Features' are self-contained units of installation code and development container configuration. Features are designed
-to install atop a wide-range of base container images.
+## Available Features
 
-You may learn about Features at [containers.dev](https://containers.dev/implementors/features/), which is the website for the dev container specification.
+This repository contains Features for:
+
+- Container Tools: argocd, calicoctl, cilium, helm, istioctl, kind, kubectl
+- Cloud & Infrastructure: bicep, gcloud, pulumi, terraform
+- Databases: mongosh, redis
+- Languages & Runtimes: deno, zig, wasm-tools
+- Build Tools: just, task
+- Other Tools: flux, kubebuilder, spin, wit-bindgen
+
+## Usage
+
+Add Features to your `.devcontainer.json`:
+
+```json
+{
+    "features": {
+        "ghcr.io/ljtill/features/atlas:latest": {},
+        "ghcr.io/ljtill/features/kind:latest": {},
+        "ghcr.io/ljtill/features/zig:latest": {}
+    }
+}
+```
+
+Each Feature's directory contains its own README with specific configuration options.
+
+## Development
+
+1. Features are organized in the `src` directory
+2. Each Feature has its own test suite in `test`
+3. Features are automatically tested and published via GitHub Actions
+
+## Contributing
+
+1. Fork the repository
+2. Create a new Feature directory in `src`
+3. Add installation scripts and Feature documentation
+4. Add tests in `test`
+5. Submit a Pull Request
+
+## Learn More
+
+- [Dev Container Features Specification](https://containers.dev/implementors/features/)
+- [Features Documentation](https://containers.dev/features)
+- [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
