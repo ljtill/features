@@ -69,7 +69,7 @@ download_binary() {
     URL="https://github.com/go-task/task/releases/download/v${VERSION}/task_linux_${ARCH}.tar.gz"
     log "INFO" "Downloading Go Task from $URL"
 
-    if ! curl -sLf --fail -o ./task_linux_${ARCH}.tar.gz "$URL"; then
+    if ! curl -sLf --fail -o ./task.tar.gz "$URL"; then
         log "ERROR" "Failed to download Go Task!"
         exit 1
     fi
@@ -79,7 +79,7 @@ download_binary() {
 
 install_binary() {
     log "INFO" "Installing Go Task..."
-    tar -zxof ./task_linux_${ARCH}.tar.gz
+    tar -zxof ./task.tar.gz
     install -m 0755 ./task /usr/local/bin/task
     log "INFO" "Go Task installed successfully to /usr/local/bin/task"
 }
