@@ -33,6 +33,7 @@ jobs:
             redis: ./**/redis/**
             spin: ./**/spin/**
             task: ./**/task/**
+            terraform: ./**/terraform/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**

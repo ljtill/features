@@ -35,6 +35,7 @@ jobs:
           - redis
           - spin
           - task
+          - terraform
           - wasm-tools
           - wasmtime
           - wit-bindgen
