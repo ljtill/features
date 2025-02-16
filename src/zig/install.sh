@@ -69,7 +69,7 @@ download_binary() {
     URL="https://ziglang.org/download/${VERSION}/zig-linux-${ARCH}-${VERSION}.tar.xz"
     log "INFO" "Downloading Zig from $URL"
 
-    if ! curl -sLf --fail -o ./zig-linux-${ARCH}-${VERSION}.tar.xz "$URL"; then
+    if ! curl -sLf --fail -o ./zig.tar.xz "$URL"; then
         log "ERROR" "Failed to download Zig!"
         exit 1
     fi
@@ -79,8 +79,8 @@ download_binary() {
 
 install_binary() {
     log "INFO" "Installing Zig..."
-    xz -d ./zig-linux-${ARCH}-${VERSION}.tar.xz
-    tar -xof ./zig-linux-${ARCH}-${VERSION}.tar
+    xz -d ./zig.tar.xz
+    tar -xof ./zig.tar
     install -m 0755 ./zig-linux-${ARCH}-${VERSION}/zig /usr/local/bin/zig
     log "INFO" "Zig installed successfully to /usr/local/bin/zig"
 }

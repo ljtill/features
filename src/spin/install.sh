@@ -69,7 +69,7 @@ download_binary() {
     URL="https://github.com/fermyon/spin/releases/download/v${VERSION}/spin-v${VERSION}-linux-${ARCH}.tar.gz"
     log "INFO" "Downloading Spin from $URL"
 
-    if ! curl -sLf --fail -o ./spin-linux-${ARCH}.tar.gz "$URL"; then
+    if ! curl -sLf --fail -o ./spin.tar.gz "$URL"; then
         log "ERROR" "Failed to download Spin!"
         exit 1
     fi
@@ -79,7 +79,7 @@ download_binary() {
 
 install_binary() {
     log "INFO" "Installing Spin..."
-    tar -zxof ./spin-linux-${ARCH}.tar.gz
+    tar -zxof ./spin.tar.gz
     install -m 0755 ./spin /usr/local/bin/spin
     log "INFO" "Spin installed successfully to /usr/local/bin/spin"
 }
