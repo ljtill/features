@@ -26,6 +26,7 @@ check "pulumi" pulumi version
 check "redis" redis-cli --version
 check "spin" spin --version
 check "task" task --version
+check "terraform" terraform -version
 check "wasm-tools" wasm-tools --version
 check "wasmtime" wasmtime --version
 check "wit-bindgen" wit-bindgen --version

@@ -1,0 +1,21 @@
+{
+    "id": "terraform",
+    "version": "1.0.0",
+    "name": "Terraform",
+    "description": "Command line tool (terraform)",
+    "documentationURL": "https://developer.hashicorp.com/terraform",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of terraform",
+            "default": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform"
+            ]
+        }
+    }
+}
