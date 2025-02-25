@@ -22,6 +22,7 @@ check "kind" kind version
 check "kubebuilder" kubebuilder version
 check "kubectl" kubectl version --client=true --output=json
 check "mongosh" mongosh --version
+check "pkl" pkl --version
 check "pulumi" pulumi version
 check "redis" redis-cli --version
 check "spin" spin --version
