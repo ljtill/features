@@ -29,6 +29,7 @@ jobs:
             kubebuilder: ./**/kubebuilder/**
             kubectl: ./**/kubectl/**
             mongosh: ./**/mongosh/**
+            pkl: ./**/pkl/**
             pulumi: ./**/pulumi/**
             redis: ./**/redis/**
             spin: ./**/spin/**

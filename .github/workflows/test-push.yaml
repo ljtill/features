@@ -31,6 +31,7 @@ jobs:
           - kubebuilder
           - kubectl
           - mongosh
+          - pkl
           - pulumi
           - redis
           - spin
