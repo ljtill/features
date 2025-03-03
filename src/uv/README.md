@@ -22,6 +22,7 @@ Command line tool (uv)
 ### VS Code Extensions
 
 - `ms-python.python`
+- `charliermarsh.ruff`
 
 
 
