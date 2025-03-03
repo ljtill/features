@@ -37,6 +37,7 @@ jobs:
           - spin
           - task
           - terraform
+          - uv
           - wasm-tools
           - wasmtime
           - wit-bindgen

@@ -35,6 +35,7 @@ jobs:
             spin: ./**/spin/**
             task: ./**/task/**
             terraform: ./**/terraform/**
+            uv: ./**/uv/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**

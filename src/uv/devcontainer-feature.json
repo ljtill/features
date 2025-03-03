@@ -1,0 +1,15 @@
+{
+    "id": "uv",
+    "version": "1.0.0",
+    "name": "uv",
+    "description": "Command line tool (uv)",
+    "documentationURL": "https://docs.astral.sh/uv/",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of uv",
+            "default": "latest"
+        }
+    },
+    "customizations": {}
+}
