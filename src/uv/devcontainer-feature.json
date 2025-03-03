@@ -1,6 +1,6 @@
 {
     "id": "uv",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "uv",
     "description": "Command line tool (uv)",
     "documentationURL": "https://docs.astral.sh/uv/",
@@ -11,5 +11,11 @@
             "default": "latest"
         }
     },
-    "customizations": {}
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
 }
