@@ -17,6 +17,12 @@ Command line tool (uv)
 |-----|-----|-----|-----|
 | version | Select version of uv | string | latest |
 
+## Customizations
+
+### VS Code Extensions
+
+- `ms-python.python`
+
 
 
 ---
