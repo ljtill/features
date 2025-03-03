@@ -1,6 +1,6 @@
 {
     "id": "uv",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "name": "uv",
     "description": "Command line tool (uv)",
     "documentationURL": "https://docs.astral.sh/uv/",
@@ -14,7 +14,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python"
+                "ms-python.python",
+                "charliermarsh.ruff"
             ]
         }
     }
