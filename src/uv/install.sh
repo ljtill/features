@@ -82,7 +82,8 @@ download_binary() {
 install_binary() {
     log "INFO" "Installing uv..."
     tar -zxof ./uv.tar.gz
-    install -m 0755 ./uv-${ARCH}-unknown-linux-gnu/uv /usr/local/bin/uv
+    install -m 0755 ./uv-${ARCH}-unknown-linux-gnu/uv  /usr/local/bin/uv
+    install -m 0755 ./uv-${ARCH}-unknown-linux-gnu/uvx /usr/local/bin/uvx
     log "INFO" "uv installed successfully to /usr/local/bin/uv"
 }
 
