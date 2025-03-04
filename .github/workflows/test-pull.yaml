@@ -32,6 +32,7 @@ jobs:
             pkl: ./**/pkl/**
             pulumi: ./**/pulumi/**
             redis: ./**/redis/**
+            ruff: ./ruff/**
             spin: ./**/spin/**
             task: ./**/task/**
             terraform: ./**/terraform/**

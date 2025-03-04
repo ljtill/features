@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "user": "vscode",
+        "features": {
+            "ruff": {
+                "version": "0.9.9"
+            }
+        }
+    }
+}
