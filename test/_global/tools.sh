@@ -25,6 +25,7 @@ check "mongosh" mongosh --version
 check "pkl" pkl --version
 check "pulumi" pulumi version
 check "redis" redis-cli --version
+check "ruff" ruff --version
 check "spin" spin --version
 check "task" task --version
 check "terraform" terraform -version

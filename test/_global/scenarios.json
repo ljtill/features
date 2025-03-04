@@ -21,6 +21,7 @@
             "pkl": {},
             "pulumi": {},
             "redis": {},
+            "ruff": {},
             "spin": {},
             "task": {},
             "terraform": {},
