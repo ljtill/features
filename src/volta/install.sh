@@ -53,7 +53,7 @@ detect_arch() {
     log "INFO" "Detecting system architecture..."
 
     case "$(uname -m)" in
-        x86_64 | amd64) ARCH="" ;;
+        x86_64 | amd64) ARCH="-" ;;
         aarch64 | arm64) ARCH="-arm" ;;
         *) log "ERROR" "Unsupported architecture: $(uname -m)"; exit 1 ;;
     esac
@@ -67,6 +67,8 @@ download_binary() {
         log "ERROR" "Missing version or architecture information!"
         exit 1
     fi
+    
+    [ "$ARCH" = "-" ] && ARCH=""
 
     URL="https://github.com/volta-cli/volta/releases/download/v${VERSION}/volta-${VERSION}-linux${ARCH}.tar.gz"
     log "INFO" "Downloading Volta binary from $URL"
