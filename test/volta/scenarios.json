@@ -1,0 +1,11 @@
+{
+    "version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "user": "vscode",
+        "features": {
+            "volta": {
+                "version": "2.0.2"
+            }
+        }
+    }
+}

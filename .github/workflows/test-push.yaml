@@ -39,6 +39,7 @@ jobs:
           - task
           - terraform
           - uv
+          - volta
           - wasm-tools
           - wasmtime
           - wit-bindgen
