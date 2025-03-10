@@ -13,7 +13,7 @@
     },
     "customizations": {},
     "containerEnv": {
-        "VOLTA_HOME": "${_REMOTE_USER_HOME}/.volta",
-        "PATH": "${VOLTA_HOME}/bin:${PATH}"
+        "VOLTA_HOME": "/usr/local/volta",
+        "PATH": "/usr/local/volta/bin:${PATH}"
     }
 }
