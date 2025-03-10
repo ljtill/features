@@ -30,6 +30,7 @@ check "spin" spin --version
 check "task" task --version
 check "terraform" terraform -version
 check "uv" uv --version
+check "volta" volta --version
 check "wasm-tools" wasm-tools --version
 check "wasmtime" wasmtime --version
 check "wit-bindgen" wit-bindgen --version

@@ -37,6 +37,7 @@ jobs:
             task: ./**/task/**
             terraform: ./**/terraform/**
             uv: ./**/uv/**
+            volta: ./**/volta/**
             wasm-tools: ./**/wasm-tools/**
             wasmtime: ./**/wasmtime/**
             wit-bindgen: ./**/wit-bindgen/**

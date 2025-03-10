@@ -1,0 +1,15 @@
+{
+    "id": "volta",
+    "version": "1.0.0",
+    "name": "Volta",
+    "description": "Command line tool (volta)",
+    "documentationURL": "https://docs.volta.sh/guide",
+    "options": {
+        "version": {
+            "type": "string",
+            "description": "Select version of volta",
+            "default": "latest"
+        }
+    },
+    "customizations": {}
+}
