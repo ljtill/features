@@ -1,6 +1,6 @@
 {
     "id": "volta",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Volta",
     "description": "Command line tool (volta)",
     "documentationURL": "https://docs.volta.sh/guide",
@@ -11,9 +11,5 @@
             "default": "latest"
         }
     },
-    "customizations": {},
-    "containerEnv": {
-        "VOLTA_HOME": "~/.volta",
-        "PATH": "${VOLTA_HOME}/bin:${PATH}"
-    }
+    "customizations": {}
 }
