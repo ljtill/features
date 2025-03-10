@@ -11,5 +11,9 @@
             "default": "latest"
         }
     },
-    "customizations": {}
+    "customizations": {},
+    "containerEnv": {
+        "VOLTA_HOME": "~/.volta",
+        "PATH": "${VOLTA_HOME}/bin:${PATH}"
+    }
 }
