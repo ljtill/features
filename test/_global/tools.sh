@@ -27,6 +27,7 @@ check "pulumi" pulumi version
 check "redis" redis-cli --version
 check "ruff" ruff --version
 check "spin" spin --version
+check "swift" swift --version
 check "task" task --version
 check "terraform" terraform -version
 check "uv" uv --version
