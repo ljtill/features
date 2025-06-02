@@ -1,13 +1,13 @@
 
-# Spin (spin)
+# Swift (swift)
 
-Command line tool (spin)
+Command line tool (swift)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/ljtill/features/spin:1": {}
+    "ghcr.io/ljtill/features/swift:1": {}
 }
 ```
 
@@ -15,16 +15,16 @@ Command line tool (spin)
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of spin | string | latest |
+| version | Select version of swift | string | latest |
 
 ## Customizations
 
 ### VS Code Extensions
 
-- `fermyon.spin-vscode`
+- `swiftlang.swift-vscode`
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/spin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ljtill/features/blob/main/src/swift/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
