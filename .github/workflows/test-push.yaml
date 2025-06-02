@@ -36,6 +36,7 @@ jobs:
           - redis
           - ruff
           - spin
+          - swift
           - task
           - terraform
           - uv

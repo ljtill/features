@@ -34,6 +34,7 @@ jobs:
             redis: ./**/redis/**
             ruff: ./ruff/**
             spin: ./**/spin/**
+            swift: ./**/swift/**
             task: ./**/task/**
             terraform: ./**/terraform/**
             uv: ./**/uv/**
