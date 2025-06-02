@@ -56,8 +56,6 @@ jobs:
           - ubuntu-24.04-arm
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
         baseImage:
-          - mcr.microsoft.com/devcontainers/base:bullseye # Debian 11
-          - mcr.microsoft.com/devcontainers/base:bookworm # Debian 12
           - mcr.microsoft.com/devcontainers/base:jammy # Ubuntu 22.04
           - mcr.microsoft.com/devcontainers/base:noble # Ubuntu 24.04
     steps:
