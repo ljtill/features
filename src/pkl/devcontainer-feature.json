@@ -1,6 +1,6 @@
 {
     "id": "pkl",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "Pkl",
     "description": "Command line tool (pkl)",
     "documentationURL": "https://pkl-lang.org",
