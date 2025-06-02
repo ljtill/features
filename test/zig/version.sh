@@ -9,7 +9,7 @@ source dev-container-features-test-lib
 check "whoami" whoami | grep vscode
 
 # Options-specific tests
-check "version" zig version | grep "0.13.0"
+check "version" zig version | grep "0.14.1"
 
 # Report result
 reportResults
