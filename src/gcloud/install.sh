@@ -3,25 +3,19 @@ set -e
 
 cd "$(mktemp -d)"
 
-log() {
-    local LEVEL="$1"
-    shift
-    echo "[$LEVEL] $*"
-}
-
 check_deps() {
-    log "INFO" "Checking required dependencies: $*"
+    echo "Checking required dependencies: $*"
     export DEBIAN_FRONTEND=noninteractive
 
     if ! dpkg -s "$@" > /dev/null 2>&1; then
         if [ ! -f /var/lib/apt/lists/lock ]; then
-            log "INFO" "Running apt update..."
+            echo "Running apt update..."
             apt update -y
         fi
-        log "INFO" "Installing missing dependencies: $*"
+        echo "Installing missing dependencies: $*"
         apt -y install --no-install-recommends "$@"
     else
-        log "INFO" "All required dependencies are already installed."
+        echo "All required dependencies are already installed."
     fi
 }
 
@@ -31,23 +25,23 @@ get_version() {
     VERSION="${VERSION:-latest}"
 
     if [ "$VERSION" = "latest" ]; then
-        log "INFO" "Using latest Google Cloud SDK version..."
+        echo "Using latest Google Cloud SDK version..."
     else
         VERSION=$(echo "$VERSION" | sed 's/v//')
-        log "INFO" "Using specified version: v$VERSION"
+        echo "Using specified version: v$VERSION"
     fi
 
     export VERSION
 }
 
 detect_arch() {
-    log "INFO" "Detecting system architecture..."
+    echo "Detecting system architecture..."
     case "$(uname -m)" in
         x86_64 | amd64) ARCH="x86_64" ;;
         aarch64 | arm64) ARCH="arm" ;;
-        *) log "ERROR" "Unsupported architecture: $(uname -m)"; exit 1 ;;
+        *) echo "Unsupported architecture: $(uname -m)"; exit 1 ;;
     esac
-    log "INFO" "Architecture detected: $ARCH"
+    echo "Architecture detected: $ARCH"
     export ARCH
 }
 
@@ -58,29 +52,29 @@ download_binary() {
         URL="https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-${VERSION}-linux-${ARCH}.tar.gz"
     fi
 
-    log "INFO" "Downloading Google Cloud SDK from $URL"
+    echo "Downloading Google Cloud SDK from $URL"
 
     if ! curl -sLf --fail -o ./gcloud.tar.gz "$URL"; then
-        log "ERROR" "Failed to download Google Cloud SDK!"
+        echo "Failed to download Google Cloud SDK!"
         exit 1
     fi
 
-    log "INFO" "Download complete!"
+    echo "Download complete!"
 }
 
 install_binary() {
-    log "INFO" "Installing Google Cloud SDK..."
+    echo "Installing Google Cloud SDK..."
     tar -zxof ./gcloud.tar.gz
     mv ./google-cloud-sdk /opt/
     /opt/google-cloud-sdk/install.sh --rc-path /etc/bash.bashrc --quiet
-    log "INFO" "Google Cloud SDK installed successfully to /opt/google-cloud-sdk"
+    echo "Google Cloud SDK installed successfully to /opt/google-cloud-sdk"
 }
 
-log "INFO" "Activating feature 'gcloud'"
+echo "Activating feature 'gcloud'"
 
 get_version
 detect_arch
 download_binary
 install_binary
 
-log "INFO" "Installation complete!"
+echo "Installation complete!"

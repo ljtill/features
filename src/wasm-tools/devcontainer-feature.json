@@ -1,6 +1,6 @@
 {
     "id": "wasm-tools",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "name": "WASM Tools",
     "description": "Command line tool (wasm-tools)",
     "documentationURL": "https://github.com/bytecodealliance/wasm-tools",

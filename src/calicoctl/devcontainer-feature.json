@@ -1,6 +1,6 @@
 {
     "id": "calicoctl",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "name": "Calico",
     "description": "Command line tool (calicoctl)",
     "documentationURL": "https://docs.tigera.io/calico",

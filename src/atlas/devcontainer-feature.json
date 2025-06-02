@@ -1,6 +1,6 @@
 {
     "id": "atlas",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "name": "Atlas",
     "description": "Command line tool (atlas)",
     "documentationURL": "https://www.mongodb.com/docs/atlas/cli/current",

@@ -1,6 +1,6 @@
 {
     "id": "bicep",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "name": "Bicep",
     "description": "Command line tool (bicep)",
     "documentationURL": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep",

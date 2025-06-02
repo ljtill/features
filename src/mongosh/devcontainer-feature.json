@@ -1,6 +1,6 @@
 {
     "id": "mongosh",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "MongoDB Shell",
     "description": "Command line tool (mongosh)",
     "documentationURL": "https://www.mongodb.com/docs/mongodb-shell/",
