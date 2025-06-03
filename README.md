@@ -6,32 +6,17 @@ A collection of reusable Development Container Features for adding tools, CLIs a
 
 This repository contains Features for:
 
-- Container Tools: argocd, calicoctl, cilium, helm, istioctl, kind, kubectl
-- Cloud & Infrastructure: bicep, gcloud, pulumi, terraform
-- Databases: mongosh, redis
-- Languages & Runtimes: deno, zig, wasm-tools
-- Build Tools: just, task
-- Other Tools: flux, kubebuilder, spin, wit-bindgen
-
-## Usage
-
-Add Features to your `.devcontainer.json`:
-
-```json
-{
-    "features": {
-        "ghcr.io/ljtill/features/atlas:latest": {},
-        "ghcr.io/ljtill/features/kind:latest": {},
-        "ghcr.io/ljtill/features/zig:latest": {}
-    }
-}
-```
-
-Each Feature's directory contains its own README with specific configuration options.
+- **Container Tools**: argocd, calicoctl, cilium, helm, istioctl, kind, kubectl
+- **Cloud & Infrastructure**: bicep, clusterctl, gcloud, pulumi, terraform
+- **Databases**: mongosh, redis
+- **Languages & Runtimes**: deno, pkl, ruff, swift, uv, zig
+- **Build Tools**: just, task, volta
+- **WebAssembly Tools**: wasm-tools, wasmtime, wit-bindgen, wit-deps
+- **Development Tools**: atlas, flux, kubebuilder, spin
 
 ## Development
 
-1. Features are organized in the `src` directory
+1. Features are organised in the `src` directory
 2. Each Feature has its own test suite in `test`
 3. Features are automatically tested and published via GitHub Actions
 
