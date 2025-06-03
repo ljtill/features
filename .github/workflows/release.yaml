@@ -1,4 +1,6 @@
 name: "Release dev container features & Generate Documentation"
+permissions:
+  contents: read
 on:
   workflow_dispatch:
 
