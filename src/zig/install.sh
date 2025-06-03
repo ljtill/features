@@ -60,7 +60,7 @@ download_binary() {
         exit 1
     fi
 
-    URL="https://ziglang.org/download/${VERSION}/zig-linux-${ARCH}-${VERSION}.tar.xz"
+    URL="https://ziglang.org/download/${VERSION}/zig-${ARCH}-linux-${VERSION}.tar.xz"
     echo "Downloading Zig from $URL"
 
     if ! curl -sLf --fail -o ./zig.tar.xz "$URL"; then
@@ -75,7 +75,7 @@ install_binary() {
     echo "Installing Zig..."
     xz -d ./zig.tar.xz
     tar -xof ./zig.tar
-    install -m 0755 ./zig-linux-${ARCH}-${VERSION}/zig /usr/local/bin/zig
+    install -m 0755 ./zig-${ARCH}-linux-${VERSION}/zig /usr/local/bin/zig
     echo "Zig installed successfully to /usr/local/bin/zig"
 }
 
