@@ -61,7 +61,7 @@ jobs:
           - mcr.microsoft.com/devcontainers/base:jammy # Ubuntu 22.04
           - mcr.microsoft.com/devcontainers/base:noble # Ubuntu 24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -80,7 +80,7 @@ jobs:
           - ubuntu-24.04-arm
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
